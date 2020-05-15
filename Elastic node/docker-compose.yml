@@ -1,0 +1,46 @@
+version: "3"
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch-oss:7.5.1
+    environment:
+      ES_JAVA_OPTS: -Xms1024m -Xmx1024m
+      TAKE_FILE_OWNERSHIP: 1
+      discovery.type: single-node
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - /var/local/dcm4chee-arc/elasticsearch:/usr/share/elasticsearch/data
+  kibana:
+    image: docker.elastic.co/kibana/kibana-oss:7.5.1
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+    depends_on:
+      - elasticsearch
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+  logstash:
+    image: dcm4che/logstash-dcm4chee:7.6.0-10
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+    ports:
+      - "12201:12201/udp"
+      - "8514:8514/udp"
+      - "8514:8514"
+    depends_on:
+      - elasticsearch
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - /var/local/dcm4chee-arc/logstash/filter-hashtree:/usr/share/logstash/data/filter-hashtree
