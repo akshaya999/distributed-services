@@ -1,0 +1,1987 @@
+# AUTO-GENERATED FILE - DO NOT EDIT!! Use ldapmodify.
+# CRC32 5f14b482
+dn: cn={6}dcm4chee-archive
+objectClass: olcSchemaConfig
+cn: {6}dcm4chee-archive
+olcAttributeTypes: {0}( 1.2.40.0.13.1.15.110.3.1 NAME 'dcmFuzzyAlgorithmClas
+ s' DESC 'Specifies Fuzzy Algorithm Implementation Class: "org.dcm4che3.soun
+ dex.Soundex", "org.dcm4che3.soundex.ESoundex", "org.dcm4che3.soundex.ESound
+ ex9", "org.dcm4che3.soundex.Metaphone", "org.dcm4che3.soundex.KPhonetik", "
+ org.dcm4che3.soundex.Phonem"' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1
+ .1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {1}( 1.2.40.0.13.1.15.110.3.2 NAME 'dcmTag' DESC 'DICOM T
+ ag as hex string' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.12
+ 1.1.26 )
+olcAttributeTypes: {2}( 1.2.40.0.13.1.15.110.3.3 NAME 'dcmCustomAttribute1' 
+ DESC 'Custom Attribute 1' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.146
+ 6.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {3}( 1.2.40.0.13.1.15.110.3.4 NAME 'dcmCustomAttribute2' 
+ DESC 'Custom Attribute 2' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.146
+ 6.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {4}( 1.2.40.0.13.1.15.110.3.5 NAME 'dcmCustomAttribute3' 
+ DESC 'Custom Attribute 3' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.146
+ 6.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {5}( 1.2.40.0.13.1.15.110.3.6 NAME 'dcmEntity' DESC 'Enti
+ ty of the Attribute Filter or Export Rule ("Patient", "Study", "Series", "I
+ nstance", "MPPS", "MWL").' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.14
+ 66.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {6}( 1.2.40.0.13.1.15.110.3.7 NAME 'dcmStorageID' DESC 'S
+ torage ID' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 
+ SINGLE-VALUE )
+olcAttributeTypes: {7}( 1.2.40.0.13.1.15.110.3.8 NAME 'dcmBulkDataSpoolDirec
+ tory' DESC 'Path to Bulk Data Spool Directory' EQUALITY caseExactMatch SYNT
+ AX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {8}( 1.2.40.0.13.1.15.110.3.9 NAME 'dcmDigestAlgorithm' D
+ ESC 'Algorithm for generation of check sums: "MD5" or "SHA-1"' EQUALITY cas
+ eExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {9}( 1.2.40.0.13.1.15.110.3.10 NAME 'dcmRetrieveAET' DESC
+  'AE Title associated with Network AE' EQUALITY caseExactIA5Match SYNTAX 1.
+ 3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {10}( 1.2.40.0.13.1.15.110.3.11 NAME 'dcmInstanceAvailabi
+ lity' DESC 'Instance Availability: ONLINE, NEARLINE or OFFLINE. ONLINE if a
+ bsent.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SIN
+ GLE-VALUE )
+olcAttributeTypes: {11}( 1.2.40.0.13.1.15.110.3.12 NAME 'dcmQueryMatchUnknow
+ n' DESC 'NO LONGER USED - MAY BE DECLARED OBSOLETE IN FUTURE VERSION' EQUAL
+ ITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {12}( 1.2.40.0.13.1.15.110.3.13 NAME 'dcmPersonNameCompon
+ entOrderInsensitiveMatching' DESC 'Indicates if name component order insens
+ itive matching is performed on fuzzy semantic matching of person names; dis
+ abled if absent' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 
+ SINGLE-VALUE )
+olcAttributeTypes: {13}( 1.2.40.0.13.1.15.110.3.14 NAME 'dcmSendPendingCGet'
+  DESC 'Enables pending C-GET responses; disabled if absent' EQUALITY boolea
+ nMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {14}( 1.2.40.0.13.1.15.110.3.15 NAME 'dcmSendPendingCMove
+ Interval' DESC 'Interval of pending C-MOVE responses in ISO-8601 duration f
+ ormat PnDTnHnMn.nS; disabled if absent' EQUALITY caseExactIA5Match SYNTAX 1
+ .3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {15}( 1.2.40.0.13.1.15.110.3.16 NAME 'dcmQueryRetrieveVie
+ wID' DESC 'Query/Retrieve View Identifier' EQUALITY caseExactMatch SUBSTR c
+ aseExactSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {16}( 1.2.40.0.13.1.15.110.3.17 NAME 'dcmShowInstancesRej
+ ectedByCode' DESC 'Indicates if the Q/R Services shall show instances rejec
+ ted by the specified code in format (CV, CSD, "CM")' EQUALITY caseExactMatc
+ h SUBSTR caseExactSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {17}( 1.2.40.0.13.1.15.110.3.18 NAME 'dcmHideRejectionNot
+ eWithCode' DESC 'Indicates if the Q/R Services shall hide Rejection Notes w
+ ith the specified code in format (CV, CSD, "CM")' EQUALITY caseExactMatch S
+ UBSTR caseExactSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {18}( 1.2.40.0.13.1.15.110.3.19 NAME 'dcmHideNotRejectedI
+ nstances' DESC 'Indicates if the Q/R Services shall hide instances not reje
+ cted by any reason; disabled if absent' EQUALITY booleanMatch SYNTAX 1.3.6.
+ 1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {19}( 1.2.40.0.13.1.15.110.3.20 NAME 'dcmWadoSupportedSRC
+ lasses' DESC 'Supported SR SOP classes for WADO retrieval' EQUALITY caseExa
+ ctIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {20}( 1.2.40.0.13.1.15.110.3.21 NAME 'dcmWadoSR2HtmlTempl
+ ateURI' DESC 'Specifies URI for the style sheet used to render structured r
+ eports to html' EQUALITY caseExactMatch SUBSTR caseExactSubstringsMatch SYN
+ TAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {21}( 1.2.40.0.13.1.15.110.3.22 NAME 'dcmWadoSR2TextTempl
+ ateURI' DESC 'Specifies URI for the style sheet used to render structured r
+ eports to plain text' EQUALITY caseExactMatch SUBSTR caseExactSubstringsMat
+ ch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {22}( 1.2.40.0.13.1.15.110.3.23 NAME 'dcmQidoMaxNumberOfR
+ esults' DESC 'Maximal number of return results by QIDO-RS Service. 0 (=unli
+ mited) if absent' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.2
+ 7 SINGLE-VALUE )
+olcAttributeTypes: {23}( 1.2.40.0.13.1.15.110.3.24 NAME 'hl7PatientUpdateTem
+ plateURI' DESC 'Specifies URI for the style sheet used by HL7v2 Patient Upd
+ ate Service.' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYN
+ TAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {24}( 1.2.40.0.13.1.15.110.3.25 NAME 'dcmFwdMppsDestinati
+ on' DESC 'Destination to forward MPPS N-CREATE RQ and N-SET RQ' EQUALITY ca
+ seExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {25}( 1.2.40.0.13.1.15.110.3.26 NAME 'dcmQueueName' DESC 
+ 'JMS Queue Name' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121
+ .1.26 SINGLE-VALUE )
+olcAttributeTypes: {26}( 1.2.40.0.13.1.15.110.3.27 NAME 'dcmJndiName' DESC '
+ JNDI Name' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 
+ SINGLE-VALUE )
+olcAttributeTypes: {27}( 1.2.40.0.13.1.15.110.3.28 NAME 'dcmExporterID' DESC
+  'Exporter ID' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1
+ .26 )
+olcAttributeTypes: {28}( 1.2.40.0.13.1.15.110.3.29 NAME 'dcmSchedule' DESC '
+ Schedule Expression in format "hour=[0-23] dayOfWeek=[0-6]" (0=Sunday)' EQU
+ ALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {29}( 1.2.40.0.13.1.15.110.3.30 NAME 'dcmDuration' DESC '
+ Duration in ISO-8601 duration format PnDTnHnMnS.' EQUALITY caseExactIA5Matc
+ h SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {30}( 1.2.40.0.13.1.15.110.3.31 NAME 'dcmExportTaskPollin
+ gInterval' DESC 'Export Task Polling Interval in ISO-8601 duration format P
+ nDTnHnMnS.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+  SINGLE-VALUE )
+olcAttributeTypes: {31}( 1.2.40.0.13.1.15.110.3.32 NAME 'dcmExportTaskFetchS
+ ize' DESC 'Limit result set of DB query for Export Tasks ready for processi
+ ng; 100 if absent' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.
+ 27 SINGLE-VALUE )
+olcAttributeTypes: {32}( 1.2.40.0.13.1.15.110.3.33 NAME 'dcmMaxRetries' DESC
+  'Maximal number of retries to process tasks scheduled in a specific queue.
+  0 if absent.' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 S
+ INGLE-VALUE )
+olcAttributeTypes: {33}( 1.2.40.0.13.1.15.110.3.34 NAME 'dcmRetryDelay' DESC
+  'Delay to retry to process tasks scheduled in a specific queue in ISO-8601
+  duration format PnDTnHnMn.nS. PT1M if absent.' EQUALITY caseExactIA5Match 
+ SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {34}( 1.2.40.0.13.1.15.110.3.35 NAME 'dcmMaxRetryDelay' D
+ ESC 'Maximal Delay to retry to process tasks scheduled in a specific queue 
+ in ISO-8601 duration format PnDTnHnMn.nS. Infinite if absent.' EQUALITY cas
+ eExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {35}( 1.2.40.0.13.1.15.110.3.36 NAME 'dcmRetryDelayMultip
+ lier' DESC 'Multiplier in % that will take effect on top of dcmRetryDelay w
+ ith dcmMaxRetryDelay to be taken into account. 100 if absent.' EQUALITY int
+ egerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {36}( 1.2.40.0.13.1.15.110.3.37 NAME 'dcmRulePriority' DE
+ SC 'Rule Priority. 0 if absent.' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1
+ 466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {37}( 1.2.40.0.13.1.15.110.3.38 NAME 'dcmUnzipVendorDataT
+ oURI' DESC 'Specifies URI of directory into which ZIP stream in Device Vend
+ or Data attribute will be extracted' EQUALITY caseExactMatch SUBSTR caseExa
+ ctSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {38}( 1.2.840.10008.15.110.3.39 NAME 'dcmHostname'  DESC 
+ 'DNS hostname'  EQUALITY caseIgnoreMatch  SUBSTR caseIgnoreSubstringsMatch 
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {39}( 1.2.40.0.13.1.15.110.3.40 NAME 'dcmNoKeywords' DESC
+  'Indicates if keywords shall be omitted in generated DICOM XML or JSON pre
+ sentations; false if absent' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.
+ 115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {40}( 1.2.40.0.13.1.15.110.3.41 NAME 'dcmPurgeStoragePoll
+ ingInterval' DESC 'Polling Interval for deleting objects in ISO-8601 durati
+ on format PnDTnHnMnS.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.1
+ 15.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {41}( 1.2.40.0.13.1.15.110.3.42 NAME 'dcmPurgeStorageFetc
+ hSize' DESC 'Maximal number of objects to delete in one task; 100 if absent
+ ' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {42}( 1.2.40.0.13.1.15.110.3.43 NAME 'dcmOverwritePolicy'
+  DESC 'Overwrite Policy: NEVER, ALWAYS, SAME_SOURCE, SAME_SERIES or SAME_SO
+ URCE_AND_SERIES. NEVER if absent.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.
+ 1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {43}( 1.2.40.0.13.1.15.110.3.44 NAME 'dcmRejectionNoteLab
+ el' DESC 'Rejection Note Label' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4
+ .1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {44}( 1.2.40.0.13.1.15.110.3.45 NAME 'dcmRejectionNoteCod
+ e' DESC 'Specifies Document Title of Rejection Note in format (CV, CSD, "CM
+ ")' EQUALITY caseExactMatch SUBSTR caseExactSubstringsMatch SYNTAX 1.3.6.1.
+ 4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {45}( 1.2.40.0.13.1.15.110.3.46 NAME 'dcmAcceptPreviousRe
+ jectedInstance' DESC 'Specifies behavior on subsequent occurrence of instan
+ ces rejected by a particular Rejection Note. Enumerated values: REJECT, RES
+ TORE, IGNORE. REJECT if absent.' EQUALITY caseExactMatch SUBSTR caseExactSu
+ bstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {46}( 1.2.40.0.13.1.15.110.3.47 NAME 'dcmOverwritePreviou
+ sRejection' DESC 'Specifies Document Title of previous Rejection Note in fo
+ rmat (CV, CSD, "CM") which may be overwritten by that Rejection Note' EQUAL
+ ITY caseExactMatch SUBSTR caseExactSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.
+ 115.121.1.15 )
+olcAttributeTypes: {47}( 1.2.40.0.13.1.15.110.3.48 NAME 'dcmRevokeRejection'
+  DESC 'NO LONGER USED - MAY BE DECLARED OBSOLETE IN FUTURE VERSION' EQUALIT
+ Y booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {48}( 1.2.40.0.13.1.15.110.3.49 NAME 'dcmDeleteRejectedIn
+ stanceDelay' DESC 'Delay in ISO-8601 duration format PnDTnHnMn.nS after whi
+ ch instances rejected by a particular Rejection Note are deleted. Infinite 
+ if absent.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+  SINGLE-VALUE )
+olcAttributeTypes: {49}( 1.2.40.0.13.1.15.110.3.50 NAME 'dcmDeleteRejectionN
+ oteDelay' DESC 'Delay in ISO-8601 duration format PnDTnHnMn.nS after which 
+ particular Rejection Notes are deleted. Infinite if absent.' EQUALITY caseE
+ xactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {50}( 1.2.40.0.13.1.15.110.3.51 NAME 'dcmDeleteRejectedPo
+ llingInterval' DESC 'Polling Interval for deleting rejected instances from 
+ the DB in ISO-8601 duration format PnDTnHnMnS.' EQUALITY caseExactIA5Match 
+ SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {51}( 1.2.40.0.13.1.15.110.3.52 NAME 'dcmDeleteRejectedFe
+ tchSize' DESC 'Maximal number of rejected instances to delete from the DB i
+ n one task; 100 if absent' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.11
+ 5.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {52}( 1.2.40.0.13.1.15.110.3.53 NAME 'dcmFallbackCMoveSCP
+ ' DESC 'AE Title of external C-MOVE SCP to forward C-MOVE RQs if the reques
+ ted Entities are not managed by this archive' EQUALITY caseExactIA5Match SY
+ NTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {53}( 1.2.40.0.13.1.15.110.3.54 NAME 'dcmAltCMoveSCP' DES
+ C 'AE Title of alternative C-MOVE SCP to forward C-MOVE RQs if the requeste
+ d Entities are not located on a local attached Storage' EQUALITY caseExactI
+ A5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {54}( 1.2.40.0.13.1.15.110.3.55 NAME 'dcmFallbackCMoveSCP
+ Destination' DESC 'AE Title of local C-STORE-SCP to be set as Move Destinat
+ ion in C-MOVE RQs forwarded to the external C-MOVE SCP specified by dcmFall
+ backCMoveSCP' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.
+ 26 SINGLE-VALUE )
+olcAttributeTypes: {55}( 1.2.40.0.13.1.15.110.3.56 NAME 'dcmFallbackCMoveSCP
+ Level' DESC 'NO LONGER USED - MAY BE DECLARED OBSOLETE IN FUTURE VERSION' E
+ QUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE
+  )
+olcAttributeTypes: {56}( 1.2.40.0.13.1.15.110.3.57 NAME 'dcmDeleterThreshold
+ ' DESC 'Minimal Usable Space on Storage System to trigger deletion. If pres
+ ent, studies are deleted from the Storage System configured for cache (dcmS
+ torageDuration=CACHE) or temporary (dcmStorageDuration=TEMPORARY) storage, 
+ if the usable space fall below that value. Format [nn"["<schedule>"]"]nnn(M
+ B|GB|MiB|GiB).' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.
+ 1.26 )
+olcAttributeTypes: {57}( 1.2.40.0.13.1.15.110.3.58 NAME 'dcmDeleteStudyBatch
+ Size' DESC 'Number of Studies to delete from the Storage System, if the usa
+ ble space fall below configured Usable Space, before checking the usable sp
+ ace again; 10 if absent' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.
+ 121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {58}( 1.2.40.0.13.1.15.110.3.59 NAME 'dcmMaxAccessTimeSta
+ leness' DESC 'Maximal staleness of recorded study accession time in ISO-860
+ 1 duration format PnDTnHnMn.nS. update of the access time disabled, if abse
+ nt.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE
+ -VALUE )
+olcAttributeTypes: {59}( 1.2.40.0.13.1.15.110.3.60 NAME 'dcmDeletePatientOnD
+ eleteLastStudy' DESC 'Specifies if a Patient shall be deleted on deletion o
+ f its last study; disabled if absent.' EQUALITY booleanMatch SYNTAX 1.3.6.1
+ .4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {60}( 1.2.40.0.13.1.15.110.3.61 NAME 'dcmStoreAccessContr
+ olID' DESC 'AccessControlID assigned to Studies received by this AE' EQUALI
+ TY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {61}( 1.2.40.0.13.1.15.110.3.62 NAME 'dcmAccessControlID'
+  DESC 'AccessControlIDs assigned to Query/Retrieve requests received by thi
+ s AE' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26)
+olcAttributeTypes: {62}( 1.2.40.0.13.1.15.110.3.63 NAME 'dcmAuditSpoolDirect
+ ory' DESC 'Path to Audit Service Spool Directory used to aggregate Audit Me
+ ssages. If absent, audit messages written to temporary location in server.'
+  EQUALITY caseExactMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE 
+ )
+olcAttributeTypes: {63}( 1.2.40.0.13.1.15.110.3.64 NAME 'dcmAuditPollingInte
+ rval' DESC 'Polling Interval for aggregating Audit Messages in ISO-8601 dur
+ ation format PnDTnHnMn.nS. Audit Message aggregation disabled, if absent.' 
+ EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALU
+ E )
+olcAttributeTypes: {64}( 1.2.40.0.13.1.15.110.3.65 NAME 'dcmAuditAggregateDu
+ ration' DESC 'Audit Message Aggregation Duration in ISO-8601 duration forma
+ t PnDTnHnMn.nS. Audit Message aggregation disabled, if absent.' EQUALITY ca
+ seExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {65}( 1.2.40.0.13.1.15.110.3.66 NAME 'dcmReadOnly' DESC '
+ Indicates if a Storage System is read only; false if absent' EQUALITY boole
+ anMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {66}( 1.2.40.0.13.1.15.110.3.67 NAME 'dcmFallbackCMoveSCP
+ Retries' DESC 'Maximal number of retries to retrieve not available objects 
+ from C-MOVE SCP configured by dcmFallbackCMoveSCP. -1 = forever. 0 if absen
+ t.' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE
+  )
+olcAttributeTypes: {67}( 1.2.40.0.13.1.15.110.3.68 NAME 'dcmStowSpoolDirecto
+ ry' DESC 'Path to Directory used by STOW-RS Service to spool Bulkdata of XM
+ L/JSON Metadata and Bulk Data Request Messages.' EQUALITY caseExactMatch SY
+ NTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {68}( 1.2.40.0.13.1.15.110.3.69 NAME 'dcmIanDestination' 
+ DESC 'Destination to send IAN N-CREATE RQ' EQUALITY caseExactIA5Match SYNTA
+ X 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {69}( 1.2.40.0.13.1.15.110.3.70 NAME 'dcmIanDelay' DESC '
+ Delay in ISO-8601 duration format PnDTnHnMn.nS after which an IAN for a rec
+ eived study is sent to configured IAN destinations. If absent, IANs are tri
+ ggered by received MPPS.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.146
+ 6.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {70}( 1.2.40.0.13.1.15.110.3.71 NAME 'dcmIanTimeout' DESC
+  'Timeout in ISO-8601 duration format PnDTnHnMn.nS for waiting on receive o
+ f instances referenced in MPPS; check for completeness forever if absent.' 
+ EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALU
+ E )
+olcAttributeTypes: {71}( 1.2.40.0.13.1.15.110.3.72 NAME 'dcmIanOnTimeout' DE
+ SC 'Specifies if the IAN is sent if the timeout for waiting on receive of i
+ nstances referenced is exceeded; just stop check for completeness on timeou
+ t if absent.' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SIN
+ GLE-VALUE )
+olcAttributeTypes: {72}( 1.2.40.0.13.1.15.110.3.73 NAME 'dcmIanTaskPollingIn
+ terval' DESC 'Polling Interval for IAN Tasks in ISO-8601 duration format Pn
+ DTnHnMn.nS. IAN disabled, if absent.' EQUALITY caseExactIA5Match SYNTAX 1.3
+ .6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {73}( 1.2.40.0.13.1.15.110.3.74 NAME 'dcmIanTaskFetchSize
+ ' DESC 'Maximal number of IAN Tasks fetched in one query; 100 if absent' EQ
+ UALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {74}( 1.2.40.0.13.1.15.110.3.75 NAME 'dcmPurgeQueueMessag
+ eCompletedDelay' DESC 'Delay in ISO-8601 duration format PnDTnHnMn.nS after
+  which completed queue messages are purged. If absent, there is no deletion
+  for that particular queue' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1
+ 466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {75}( 1.2.40.0.13.1.15.110.3.76 NAME 'dcmPurgeQueueMessag
+ ePollingInterval' DESC 'Polling Interval for purging queue messages in ISO-
+ 8601 duration format PnDTnHnMn.nS. If absent, there is no deletion' EQUALIT
+ Y caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {76}( 1.2.40.0.13.1.15.110.3.77 NAME 'dcmPurgeQueueMessag
+ eFetchSize' DESC 'NO LONGER USED - MAY BE DECLARED OBSOLETE IN FUTURE VERSI
+ ON' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE
+  )
+olcAttributeTypes: {77}( 1.2.40.0.13.1.15.110.3.78 NAME 'dcmAttributeUpdateP
+ olicy' DESC 'Specifies update policy for extracted attributes into the DB o
+ n Series, Study & Patient level on receive of further instance of the entit
+ y. Enumerated values: PRESERVE, SUPPLEMENT, MERGE, OVERWRITE, REPLACE. If a
+ bsent, PRESERVE will be applied.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1
+ .4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {78}( 1.2.40.0.13.1.15.110.3.79 NAME 'dcmWadoSpoolDirecto
+ ry' DESC 'Path to Wado-RS spool directory used to aggregate uncompressed fr
+ ames. If absent, aggregation done in temp directory.' EQUALITY caseExactMat
+ ch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {79}( 1.2.40.0.13.1.15.110.3.80 NAME 'hl7ImportReportTemp
+ lateURI' DESC 'Specifies URI for the style sheet to transcode received HL7 
+ ORU^R01 to DICOM SR.' EQUALITY caseExactMatch SUBSTR caseExactSubstringsMat
+ ch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {80}( 1.2.40.0.13.1.15.110.3.81 NAME 'dcmAECacheStaleTime
+ out' DESC 'Maximal staleness of cached AE in ISO-8601 duration format PnDTn
+ HnMn.nS. If absent, cached AE entries will not be refetched from LDAP.' EQU
+ ALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {81}( 1.2.40.0.13.1.15.110.3.82 NAME 'dcmLeadingCFindSCP'
+  DESC 'AE Title of external C-FIND SCP for Attribute Coercion with Patient 
+ and Study attributes fetched from this AE. If no particular Attribute Set i
+ s specified for the C-FIND SCP, all Attributes of the configured Patient an
+ d Study Attribute Filter will be fetched.' EQUALITY caseExactIA5Match SYNTA
+ X 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {82}( 1.2.40.0.13.1.15.110.3.83 NAME 'dcmLeadingCFindSCPQ
+ ueryCacheStaleTimeout' DESC 'Maximal staleness of cached Patient and Study 
+ attributes fetched from leading C-Find SCP in ISO-8601 duration format PnDT
+ nHnMn.nS. If absent, cache Study attributes are only removed on reaching th
+ e maximal cache size.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.1
+ 15.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {83}( 1.2.40.0.13.1.15.110.3.84 NAME 'dcmLeadingCFindSCPQ
+ ueryCacheSize' DESC 'Maximum number of cached Patient and Study attributes 
+ fetched from leading C-Find SCP; 10 if absent' EQUALITY integerMatch SYNTAX
+  1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {84}( 1.2.40.0.13.1.15.110.3.85 NAME 'hl7ScheduleProcedur
+ eTemplateURI' DESC 'Specifies URI for the style sheet to transcode received
+  HL7 ORM^O01, OMI^O23, OMG^O19 to DICOM MWL items.' EQUALITY caseExactMatch
+  SUBSTR caseExactSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGL
+ E-VALUE )
+olcAttributeTypes: {85}( 1.2.40.0.13.1.15.110.3.86 NAME 'dcmHideSPSWithStatu
+ sFromMWL' DESC 'Scheduled Procedure Step Status codes of MWL items which sh
+ all not be returned by the MWL SCP. Enumerated values: SCHEDULED, ARRIVED, 
+ READY, STARTED, DEPARTED, CANCELLED, DISCONTINUED, COMPLETED' EQUALITY case
+ ExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {86}( 1.2.40.0.13.1.15.110.3.87 NAME 'hl7LogFilePattern' 
+ DESC 'Path to HL7 messages which will be captured exactly as received. If a
+ bsent, there is no logging.' EQUALITY caseExactMatch SYNTAX 1.3.6.1.4.1.146
+ 6.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {87}( 1.2.40.0.13.1.15.110.3.88 NAME 'hl7ErrorLogFilePatt
+ ern' DESC 'Path to HL7 messages which will be captured exactly as received,
+  when processing of HL7 messages fails. If absent, there is no logging.' EQ
+ UALITY caseExactMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {88}( 1.2.40.0.13.1.15.110.3.89 NAME 'dcmRetentionPeriod'
+  DESC 'Minimum Study Retention Period in ISO-8601 period format PnYnMnD or 
+ PnW.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGL
+ E-VALUE )
+olcAttributeTypes: {89}( 1.2.40.0.13.1.15.110.3.90 NAME 'dcmExpireSeriesIndi
+ vidually' DESC 'Indicates if series should be expired individually or not. 
+ If absent, it is false.' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.
+ 121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {90}( 1.2.40.0.13.1.15.110.3.91 NAME 'dcmRejectExpiredStu
+ diesPollingInterval' DESC 'Polling Interval for rejecting expired Studies a
+ nd Series in ISO-8601 duration format PnDTnHnMn.nS. If absent, neither expi
+ red Studies nor Series will be rejected automatically' EQUALITY caseExactIA
+ 5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {91}( 1.2.40.0.13.1.15.110.3.92 NAME 'dcmRejectExpiredStu
+ diesPollingStartTime' DESC 'NO LONGER USED - MAY BE DECLARED OBSOLETE IN FU
+ TURE VERSION' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.
+ 26 SINGLE-VALUE )
+olcAttributeTypes: {92}( 1.2.40.0.13.1.15.110.3.93 NAME 'dcmRejectExpiredStu
+ diesFetchSize' DESC 'Maximal number of expired Studies fetched in one query
+ ; If absent, expired Studies will not be rejected automatically' EQUALITY i
+ ntegerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {93}( 1.2.40.0.13.1.15.110.3.94 NAME 'dcmRejectExpiredSer
+ iesFetchSize' DESC 'Maximal number of expired Series fetched in one query; 
+ If absent, expired Series will not be rejected automatically' EQUALITY inte
+ gerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {94}( 1.2.40.0.13.1.15.110.3.95 NAME 'dcmRejectExpiredStu
+ diesAETitle' DESC 'AE Title of Local Application Entity performing the auto
+ matic rejection of expired Studies and Series. If absent, neither expired S
+ tudies nor Series will be rejected automatically' EQUALITY caseExactIA5Matc
+ h SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {95}( 1.2.40.0.13.1.15.110.3.96 NAME 'dcmRejectionNoteTyp
+ e' DESC 'Type of Rejection Note. Enumerated values: REJECTED_FOR_QUALITY_RE
+ ASONS, REJECTED_FOR_PATIENT_SAFETY_REASONS, INCORRECT_MODALITY_WORKLIST_ENT
+ RY, DATA_RETENTION_POLICY_EXPIRED, REVOKE_REJECTION' EQUALITY caseExactIA5M
+ atch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {96}( 1.2.40.0.13.1.15.110.3.97 NAME 'dcmFallbackCMoveSCP
+ StudyOlderThan' DESC 'Specifies threshold for Study Date in format YYYYMMDD
+  for marking received Studies as (potential) incomplete to enforce the retr
+ ieve from configured dcmFallbackCMoveSCP' EQUALITY caseExactIA5Match SYNTAX
+  1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {97}( 1.2.40.0.13.1.15.110.3.98 NAME 'dcmIDGeneratorName'
+  DESC 'ID Generator Name. Enumerated values: PatientID, AccessionNumber, Re
+ questedProcedureID, ScheduledProcedureStepID' EQUALITY caseExactIA5Match SY
+ NTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {98}( 1.2.40.0.13.1.15.110.3.99 NAME 'dcmIDGeneratorForma
+ t' DESC 'Format string used by this ID Generator. %0<width>d will be replac
+ ed by a sequential number with leading zeros according the given width' EQU
+ ALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {99}( 1.2.40.0.13.1.15.110.3.100 NAME 'dcmIDGeneratorInit
+ ialValue' DESC 'Initial value for sequence used by this ID Generator; 1 if 
+ absent' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-V
+ ALUE )
+olcAttributeTypes: {100}( 1.2.40.0.13.1.15.110.3.101 NAME 'dcmStorePermissio
+ nServiceURL' DESC 'URL of Store Permission Service which will be invoked on
+  receive of the first object of a study. {<attributeID>} will be replaced b
+ y the value of the attribute in the object. E.g. http://host.name/storage-p
+ ermission/study/{0020000D}?patientId={00100020}&patientIdIssuer={00100021}&
+ studyDescription={00081030}' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.
+ 1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {101}( 1.2.40.0.13.1.15.110.3.102 NAME 'dcmStorePermissio
+ nServiceResponsePattern' DESC 'Regular Expression applied to responses from
+  Store Permission Service to determine agreement for storage. E.g. "validat
+ ion"\s*:\s*"true" . If absent, every success response will be treated as ag
+ reement for storage.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.11
+ 5.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {102}( 1.2.40.0.13.1.15.110.3.103 NAME 'dcmStorePermissio
+ nCacheStaleTimeout' DESC 'Maximal staleness of cached responses from Storag
+ e Permission Service in ISO-8601 duration format PnDTnHnMn.nS. If absent, c
+ ached responses are only removed on reaching the maximal cache size.' EQUAL
+ ITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {103}( 1.2.40.0.13.1.15.110.3.104 NAME 'dcmStorePermissio
+ nCacheSize' DESC 'Maximum number of cached responses from Storage Permissio
+ n Service; 10 if absent' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.
+ 121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {104}( 1.2.40.0.13.1.15.110.3.105 NAME 'dcmAllowRejection
+ ForDataRetentionPolicyExpired' DESC 'Allow Rejection For Data Retention Pol
+ icy Expired. Enumerated values: NEVER, ALWAYS, EXPIRED_UNSET, ONLY_EXPIRED.
+  If absent, EXPIRED_UNSET will be applied.' EQUALITY caseExactIA5Match SYNT
+ AX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {105}( 1.2.40.0.13.1.15.110.3.106 NAME 'dcmRetryOnWarning
+ ' DESC 'Enables retries to process tasks not only on failure but also on a 
+ warning outcome status in a specific queue; disabled if absent' EQUALITY bo
+ oleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {106}( 1.2.40.0.13.1.15.110.3.107 NAME 'dcmStoreUpdateDBM
+ axRetries' DESC 'Maximum number of retries to update the database on storag
+ e; 1 if absent' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 
+ SINGLE-VALUE )
+olcAttributeTypes: {107}( 1.2.40.0.13.1.15.110.3.108 NAME 'dcmMetadataStorag
+ eID' DESC 'ID of Storage on which Metadata is stored in JSON format - addit
+ ionally to the complete DICOM composite object. Multiple Storage Systems ma
+ y be configured. If absent, metadata is not stored additionally.' EQUALITY 
+ caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {108}( 1.2.40.0.13.1.15.110.3.109 NAME 'hl7FwdApplication
+ Name' DESC 'HL7 Forward Destination Application and Facility name (Applicat
+ ion^Facility)' EQUALITY caseExactMatch SUBSTR caseExactSubstringsMatch SYNT
+ AX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {109}( 1.2.40.0.13.1.15.110.3.110 NAME 'dcmAcceptedUserRo
+ le' DESC 'Roles of users from which web requests are accepted; any if absen
+ t.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {110}( 1.2.40.0.13.1.15.110.3.111 NAME 'dcmAcceptMissingP
+ atientID' DESC 'Indicates if objects without Patient IDs shall be accepted 
+ and if a Patient ID shall be created. Enumerated values: YES, NO, CREATE. I
+ f absent, CREATE will be applied.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.
+ 1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {111}( 1.2.40.0.13.1.15.110.3.112 NAME 'dcmAllowDeleteStu
+ dyPermanently' DESC 'Allow to delete Study permanently. Enumerated values: 
+ ALWAYS, REJECTED (= only already rejected Studies). If absent, REJECTED wil
+ l be applied.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1
+ .26 SINGLE-VALUE )
+olcAttributeTypes: {112}( 1.2.40.0.13.1.15.110.3.113 NAME 'dcmStorePermissio
+ nServiceExpirationDatePattern' DESC 'Regular Expression applied to response
+ s from Store Permission Service to extract the initial Study Expiration Dat
+ e. E.g. "expirationdate"\s*:\s*"([0-9]{8})". If absent, locally configured 
+ Study Retention Policy Rules will be applied.' EQUALITY caseExactIA5Match S
+ YNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {113}( 1.2.40.0.13.1.15.110.3.114 NAME 'dcmShowPatientInf
+ oInSystemLog' DESC 'Specifies if Patient Information is shown as plain text
+  or hashed in system logs. Enumerated values. PLAIN_TEXT, HASH_NAME, HASH_N
+ AME_AND_ID. PLAIN_TEXT if absent.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.
+ 1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {114}( 1.2.40.0.13.1.15.110.3.115 NAME 'dcmShowPatientInf
+ oInAuditLog' DESC 'Specifies if Patient Information is shown as plain text 
+ or hashed in emitted audit messages. Enumerated values. PLAIN_TEXT, HASH_NA
+ ME, HASH_NAME_AND_ID. PLAIN_TEXT if absent.' EQUALITY caseExactIA5Match SYN
+ TAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {115}( 1.2.40.0.13.1.15.110.3.116 NAME 'dcmFallbackCMoveS
+ CPLeadingCFindSCP' DESC 'AE Title of external C-FIND SCP for Verification o
+ f Number of Instances retrieved from external C-MOVE SCP specified by dcmFa
+ llbackCMoveSCP.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121
+ .1.26 SINGLE-VALUE )
+olcAttributeTypes: {116}( 1.2.40.0.13.1.15.110.3.117 NAME 'dcmStgCmtSCP' DES
+ C 'AE Title of external Storage Commitment SCP used to verify export to ano
+ ther archive.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1
+ .26 SINGLE-VALUE )
+olcAttributeTypes: {117}( 1.2.40.0.13.1.15.110.3.118 NAME 'dcmPurgeStgCmtCom
+ pletedDelay' DESC 'Delay in ISO-8601 duration format PnDTnHnMn.nS after whi
+ ch results of completed Storage Commitment requests are purged. If absent, 
+ there is no deletion.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.1
+ 15.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {118}( 1.2.40.0.13.1.15.110.3.119 NAME 'dcmPurgeStgCmtPol
+ lingInterval' DESC 'Polling Interval for purging Storage Commitment Results
+  in ISO-8601 duration format PnDTnHnMn.nS. If absent, there is no deletion'
+  EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VAL
+ UE )
+olcAttributeTypes: {119}( 1.2.40.0.13.1.15.110.3.120 NAME 'dcmDefaultCharact
+ erSet' DESC 'Value of Specific Character Set (0008,0005) added to Data Sets
+  of C-STORE RQs and pending C-FIND RSPs without Specific Character Set (000
+ 8,0005) attribute received by the Network AE.' EQUALITY caseExactIA5Match S
+ YNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {120}( 1.2.40.0.13.1.15.110.3.121 NAME 'dcmStorePermissio
+ nServiceErrorCommentPattern' DESC 'Regular Expression applied to responses 
+ from Store Permission Service to extract Error Comment. E.g. "errorcomment"
+ \s*:\s*"(.*)". If absent, the Error Comment will be "Storage denied".' EQUA
+ LITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {121}( 1.2.40.0.13.1.15.110.3.122 NAME 'dcmStorePermissio
+ nServiceErrorCodePattern' DESC 'Regular Expression applied to responses fro
+ m Store Permission Service to extract Error Code in hexadecimal. E.g. "erro
+ rcode"\s*:\s*"(\p{XDigit}{4})". If absent, the Error Code will be 0124H (No
+ t Authorized).' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.
+ 1.26 SINGLE-VALUE )
+olcAttributeTypes: {122}( 1.2.40.0.13.1.15.110.3.123 NAME 'dcmExternalRetrie
+ veAET' DESC 'Constrains deletion of Studies from the Storage System to Stud
+ ies which objects are retrievable using this AE from an external C-MOVE SCP
+ .' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {123}( 1.2.40.0.13.1.15.110.3.124 NAME 'dcmExternalRetrie
+ veAEDestination' DESC 'AE Title of local C-STORE-SCP to be set as Move Dest
+ ination in C-MOVE RQs forwarded to external retrieve AE.' EQUALITY caseExac
+ tIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {124}( 1.2.40.0.13.1.15.110.3.125 NAME 'dcmMergeMWLMatchi
+ ngKey' DESC 'Specifies attribute of received object to lookup MWL Item used
+  to coerce request attributes. Enumerated values: AccessionNumber, StudyIns
+ tanceUID, ScheduledProcedureStepID. If absent, request attributes of receiv
+ ed objects will not be coerced.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.
+ 4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {125}( 1.2.40.0.13.1.15.110.3.126 NAME 'dcmMergeMWLTempla
+ teURI' DESC 'Specifies URI for the style sheet to coerce request attributes
+  of received objects from matching DICOM MWL items. Only effective, if dcmM
+ ergeMWLMatchingKey is specified.' EQUALITY caseExactMatch SUBSTR caseExactS
+ ubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {126}( 1.2.40.0.13.1.15.110.3.127 NAME 'dcmMergeMWLCacheS
+ taleTimeout' DESC 'Maximal staleness of Request Attributes extracted from m
+ atching DICOM MWL items in ISO-8601 duration format PnDTnHnMn.nS. If absent
+ , cached Request Attributes are only removed on reaching the maximal cache 
+ size.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SING
+ LE-VALUE )
+olcAttributeTypes: {127}( 1.2.40.0.13.1.15.110.3.128 NAME 'dcmMergeMWLCacheS
+ ize' DESC 'Maximum number of cached Request Attributes extracted from match
+ ing DICOM MWL items; 10 if absent' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1
+ .1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {128}( 1.2.40.0.13.1.15.110.3.129 NAME 'dcmSeriesMetadata
+ StorageID' DESC 'ID of Storage on which ZIP archives with aggregated Metada
+ ta of all instances of a Series is stored. Multiple Storage Systems may be 
+ configured. If absent, no aggregated Series Metadata will be stored.' EQUAL
+ ITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {129}( 1.2.40.0.13.1.15.110.3.130 NAME 'dcmSeriesMetadata
+ Delay' DESC 'Delay in ISO-8601 duration format PnDTnHnMn.nS for storing agg
+ regated Series Metadata on storage. If absent, no aggregated Series Metadat
+ a will be stored.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.1
+ 21.1.26 SINGLE-VALUE )
+olcAttributeTypes: {130}( 1.2.40.0.13.1.15.110.3.131 NAME 'dcmSeriesMetadata
+ PollingInterval' DESC 'Polling Interval for Series scheduled for Metadata u
+ pdate in ISO-8601 duration format PnDTnHnMn.nS. If absent, no aggregated Se
+ ries Metadata will be stored.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.
+ 1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {131}( 1.2.40.0.13.1.15.110.3.132 NAME 'dcmSeriesMetadata
+ FetchSize' DESC 'Maximal number of Series scheduled for Metadata update fet
+ ched by one query; 100 if absent' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.
+ 1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {132}( 1.2.40.0.13.1.15.110.3.133 NAME 'dcmRSOperation' D
+ ESC 'Name of RESTful Operation which shall be forwarded to another archive 
+ instance. Enumerated values: CreatePatient, UpdatePatient, DeletePatient, C
+ hangePatientID, MergePatient, MergePatients, UpdateStudy, DeleteStudy, Reje
+ ctStudy, RejectSeries, RejectInstance, UpdateStudyExpirationDate, UpdateSer
+ iesExpirationDate, ApplyRetentionPolicy, CreateMWL, UpdateMWL, DeleteMWL, U
+ pdateStudyAccessControlID' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.14
+ 66.115.121.1.26 )
+olcAttributeTypes: {133}( 1.2.40.0.13.1.15.110.3.134 NAME 'dcmMetadataFilter
+ Name' DESC 'NO LONGER USED - MAY BE DECLARED OBSOLETE IN FUTURE VERSION' EQ
+ UALITY caseExactMatch SUBSTR caseExactSubstringsMatch SYNTAX 1.3.6.1.4.1.14
+ 66.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {134}( 1.2.40.0.13.1.15.110.3.135 NAME 'dcmPurgeInstanceR
+ ecordsDelay' DESC 'Delay in ISO-8601 duration format PnDTnHnMn.nS for purgi
+ ng Instance Records from the DB. Only effective if dcmPurgeInstanceRecords 
+ = true.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SI
+ NGLE-VALUE )
+olcAttributeTypes: {135}( 1.2.40.0.13.1.15.110.3.136 NAME 'dcmPurgeInstanceR
+ ecordsPollingInterval' DESC 'Polling Interval for Series scheduled for purg
+ ing Instance Records from the DB in ISO-8601 duration format PnDTnHnMn.nS. 
+ Only effective if dcmPurgeInstanceRecords = true.' EQUALITY caseExactIA5Mat
+ ch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {136}( 1.2.40.0.13.1.15.110.3.137 NAME 'dcmPurgeInstanceR
+ ecordsFetchSize' DESC 'Maximal number of Series scheduled for purging Insta
+ nce Records from the DB fetched by one query; 100 if absent. Only effective
+  if dcmPurgeInstanceRecords = true.' EQUALITY integerMatch SYNTAX 1.3.6.1.4
+ .1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {137}( 1.2.40.0.13.1.15.110.3.138 NAME 'hl7OrderScheduled
+ StationDeviceReference'  DESC 'The DN of a dicomDeviceObject referenced by 
+ hl7OrderScheduledStation'  EQUALITY distinguishedNameMatch  SYNTAX 1.3.6.1.
+ 4.1.1466.115.121.1.12  SINGLE-VALUE )
+olcAttributeTypes: {138}( 1.2.40.0.13.1.15.110.3.139 NAME 'dcmSPSStatus' DES
+ C 'Scheduled Procedure Step Status code. Enumerated values: SCHEDULED, ARRI
+ VED, READY, STARTED, DEPARTED, CANCELLED, DISCONTINUED, COMPLETED' EQUALITY
+  caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {139}( 1.2.40.0.13.1.15.110.3.140 NAME 'hl7OrderControlSt
+ atus' DESC 'HL7 Order Control Status Code. Enumerated values: NW_SC, NW_IP,
+  CA_CA, DC_CA, XO_SC, XO_CM, SC_CM, SC_DC, SC_IP, SC_A' EQUALITY caseExactI
+ A5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {140}( 1.2.40.0.13.1.15.110.3.141 NAME 'dcmRemapRetrieveU
+ RL' DESC 'Remap Retrieve URL used in QIDO-RS and WADO-RS Metadata responses
+ . Optionally prefixed with "[<http-client-host>]". E.g.: "[cache-proxy]http
+ ://cache-proxy:8080". If absent or if the specified <http-client-host> does
+  not match, scheme and server authority of the QIDO-RS or WADO-RS request U
+ RL are used.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.
+ 26 SINGLE-VALUE )
+olcAttributeTypes: {141}( 1.2.40.0.13.1.15.110.3.142 NAME 'dcmAcceptedMoveDe
+ stination' DESC 'Accepted Move Destination in C-MOVE requests; any if absen
+ t.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {142}( 1.2.40.0.13.1.15.110.3.143 NAME 'dcmValidateCallin
+ gAEHostname' DESC 'Validate Calling AE Hostname or IP Address of Associatio
+ n requestors; disabled if absent' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.
+ 1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {143}( 1.2.40.0.13.1.15.110.3.144 NAME 'dcmStoreUpdateDBM
+ axRetryDelay' DESC 'Maximal delay in ms between retries to update the datab
+ ase on storage; 1000 if absent' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.14
+ 66.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {144}( 1.2.40.0.13.1.15.110.3.145 NAME 'hl7PSUTaskPolling
+ Interval' DESC 'Polling Interval for HL7 Procedure Status Update Tasks in I
+ SO-8601 duration format PnDTnHnMn.nS. Disabled, if absent.' EQUALITY caseEx
+ actIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {145}( 1.2.40.0.13.1.15.110.3.146 NAME 'hl7PSUTaskFetchSi
+ ze' DESC 'Maximal number of HL7 Procedure Status Update Tasks fetched in on
+ e query; 100 if absent' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.1
+ 21.1.27 SINGLE-VALUE )
+olcAttributeTypes: {146}( 1.2.40.0.13.1.15.110.3.147 NAME 'hl7PSUDelay' DESC
+  'Delay in ISO-8601 duration format PnDTnHnMn.nS after which an HL7 Procedu
+ re Status Update for a received study is sent to configured HL7 receivers. 
+ If absent, HL7 Procedure Status Update is triggered by received MPPS.' EQUA
+ LITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {147}( 1.2.40.0.13.1.15.110.3.148 NAME 'hl7PSUTimeout' DE
+ SC 'Timeout in ISO-8601 duration format PnDTnHnMn.nS for waiting on receive
+  of instances referenced in MPPS; check for completeness forever if absent.
+ ' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VA
+ LUE )
+olcAttributeTypes: {148}( 1.2.40.0.13.1.15.110.3.149 NAME 'hl7PSUOnTimeout' 
+ DESC 'Specifies if the HL7 Procedure Status Update is sent if the timeout f
+ or waiting on receive of instances referenced is exceeded; just stop check 
+ for completeness on timeout if absent.' EQUALITY booleanMatch SYNTAX 1.3.6.
+ 1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {149}( 1.2.40.0.13.1.15.110.3.150 NAME 'hl7PSUReceivingAp
+ plication' DESC 'Application|Facility name of Receiving Application for HL7
+  Procedure Status Update.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.14
+ 66.115.121.1.26 )
+olcAttributeTypes: {150}( 1.2.40.0.13.1.15.110.3.151 NAME 'hl7PSUSendingAppl
+ ication' DESC 'Application|Facility name of Sending Application for HL7 Pro
+ cedure Status Update. HL7 Procedure Status Update disabled, if absent.' EQU
+ ALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {151}( 1.2.40.0.13.1.15.110.3.152 NAME 'hl7PSUMWL' DESC '
+ Specifies if the Status of MWL Items in the DB is updated to COMPLETED for 
+ a received study after the configured HL7 Procedure Status Update Delay onl
+ y if no notification to HL7 receivers is configured. Disabled, if absent.' 
+ EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {152}( 1.2.40.0.13.1.15.110.3.153 NAME 'dcmExportPrevious
+ Entity' DESC 'Specifies if the previous Entity of a replaced Instance shall
+  be also exported. Disabled if absent.' EQUALITY booleanMatch SYNTAX 1.3.6.
+ 1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {153}( 1.2.40.0.13.1.15.110.3.154 NAME 'dcmAcceptConflict
+ ingPatientID' DESC 'Indicates if objects with a Patient IDs which differs f
+ rom the Patient ID in previous received objects of the Study shall be accep
+ ted. Enumerated values: YES, NO, MERGED(= accept prior Patient IDs). If abs
+ ent, MERGED will be applied.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1
+ .1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {154}( 1.2.40.0.13.1.15.110.3.155 NAME 'dcmAuditRecordRep
+ ositoryURL' DESC 'Access URL of Audit Record Repository. E.g. http://kibana
+ :5601' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SING
+ LE-VALUE )
+olcAttributeTypes: {155}( 1.2.40.0.13.1.15.110.3.156 NAME 'dcmCopyMoveUpdate
+ Policy' DESC 'Specifies update policy for attributes of the destination Stu
+ dy on Copy/Move of Instances from another Study. Enumerated values: PRESERV
+ E, SUPPLEMENT, MERGE, OVERWRITE, REPLACE. If absent, PRESERVE will be appli
+ ed.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE
+ -VALUE )
+olcAttributeTypes: {156}( 1.2.40.0.13.1.15.110.3.157 NAME 'hl7TrackChangedPa
+ tientID' DESC 'Enable to keep track of the prior Patient ID on a change of 
+ the Patient ID by HL7 ADT^A47 or by the RESTful Patient Update Service. Ena
+ bled if absent.' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 
+ SINGLE-VALUE )
+olcAttributeTypes: {157}( 1.2.40.0.13.1.15.110.3.158 NAME 'dcmXDSiImagingDoc
+ umentSourceAETitle' DESC 'AE Title of local Application Entity associated w
+ ith XDS-I Imaging Document Source.' EQUALITY caseExactIA5Match SYNTAX 1.3.6
+ .1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {158}( 1.2.40.0.13.1.15.110.3.159 NAME 'dcmInvokeImageDis
+ playPatientURL' DESC 'NO LONGER USED - MAY BE DECLARED OBSOLETE IN FUTURE V
+ ERSION' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SIN
+ GLE-VALUE )
+olcAttributeTypes: {159}( 1.2.40.0.13.1.15.110.3.160 NAME 'dcmInvokeImageDis
+ playStudyURL' DESC 'NO LONGER USED - MAY BE DECLARED OBSOLETE IN FUTURE VER
+ SION' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGL
+ E-VALUE )
+olcAttributeTypes: {160}( 1.2.40.0.13.1.15.110.3.161 NAME 'hl7ADTReceivingAp
+ plication' DESC 'Application|Facility name of Receiving Application for HL7
+  ADT messages to synchronize external systems about performed Patient Infor
+ mation updates. If absent, synchronization of external systems by HL7 ADT m
+ essages is disabled.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.11
+ 5.121.1.26 )
+olcAttributeTypes: {161}( 1.2.40.0.13.1.15.110.3.162 NAME 'hl7ADTSendingAppl
+ ication' DESC 'Application|Facility name of Sending Application for HL7 ADT
+  messages to synchronize external systems about performed Patient Informati
+ on updates. If absent, synchronization of external systems by HL7 ADT messa
+ ges is disabled.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.12
+ 1.1.26 SINGLE-VALUE )
+olcAttributeTypes: {162}( 1.2.40.0.13.1.15.110.3.163 NAME 'dcmRetrieveLocati
+ onUID'  DESC 'Retrieve Location UID.'  EQUALITY  objectIdentifierMatch  SYN
+ TAX 1.3.6.1.4.1.1466.115.121.1.38  SINGLE-VALUE )
+olcAttributeTypes: {163}( 1.2.40.0.13.1.15.110.3.164 NAME 'hl7ScheduledProto
+ colCodeInOrder' DESC 'Specifies location of Scheduled Protocol Code in rece
+ ived HL7 Order message. Enumerated values: OBR_4_1, OBR_4_4. If absent, OBR
+ _4_4 will be applied.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.1
+ 15.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {164}( 1.2.40.0.13.1.15.110.3.165 NAME 'dcmAuditUnknownSt
+ udyInstanceUID' DESC 'Indicates study instance uid value to be sent in audi
+ t message when not known. If absent, "1.2.40.0.13.1.15.110.3.165.1" will be
+  applied.' EQUALITY objectIdentifierMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1
+ .38 SINGLE-VALUE )
+olcAttributeTypes: {165}( 1.2.40.0.13.1.15.110.3.166 NAME 'dcmAuditUnknownPa
+ tientID' DESC 'Indicates patient id value to be sent in audit message when 
+ not known. If absent, "<none>" will be applied.' EQUALITY caseExactIA5Match
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {166}( 1.2.40.0.13.1.15.110.3.167 NAME 'hl7ScheduledStati
+ onAETInOrder' DESC 'Specifies location of Scheduled Station AE Title in rec
+ eived HL7 Order message. Enumerated values: ORC_18. Should not be configure
+ d for HL7 v2.5.1 OMI^O23 with IPC segment. If absent or no value is provide
+ d in the configured field, the Scheduled Station AE Title is selected accor
+ ding configured rules.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.
+ 115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {167}( 1.2.40.0.13.1.15.110.3.168 NAME 'dcmElasticSearchU
+ RL' DESC 'NO LONGER USED - MAY BE DECLARED OBSOLETE IN FUTURE VERSION' EQUA
+ LITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {168}( 1.2.40.0.13.1.15.110.3.169 NAME 'dcmAudit2JsonFhir
+ TemplateURI' DESC 'Specifies URI for the style sheet to transcode Audit Mes
+ sage to a FHIR JSON Resource Audit Event' EQUALITY caseExactMatch SUBSTR ca
+ seExactSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {169}( 1.2.40.0.13.1.15.110.3.170 NAME 'dcmAudit2XmlFhirT
+ emplateURI' DESC 'Specifies URI for the style sheet to transcode Audit Mess
+ age to a FHIR XML Resource Audit Event' EQUALITY caseExactMatch SUBSTR case
+ ExactSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {170}( 1.2.40.0.13.1.15.110.3.171 NAME 'dcmStorageThresho
+ ld' DESC 'Minimal Usable Space on Storage System. If the usable space falls
+  below that value the Storage System will be marked as full by setting dmcS
+ torageThresholdExceeds to the current time and - if dcmStorageThresholdExce
+ edsPermanently is true or absent - the Storage System will be removed from 
+ the list of configured Storage Systems of the Network AE requesting that St
+ orage System. Format nnn(MB|GB|MiB|GiB)' EQUALITY caseExactIA5Match SYNTAX 
+ 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {171}( 1.2.40.0.13.1.15.110.3.172 NAME 'dcmObjectStorageI
+ D' DESC 'ID of Storage System on which received DICOM composite objects are
+  stored. Multiple Storage Systems may be configured.' EQUALITY caseExactIA5
+ Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {172}( 1.2.40.0.13.1.15.110.3.173 NAME 'dcmObjectStorageC
+ ount' DESC 'Number of Storage Systems which are filled in parallel; 1 if ab
+ sent.' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VA
+ LUE )
+olcAttributeTypes: {173}( 1.2.40.0.13.1.15.110.3.174 NAME 'dcmQueryFetchSize
+ ' DESC 'Number of rows fetched from the database at once by the Query Servi
+ ce. 100 if absent' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.
+ 27 SINGLE-VALUE )
+olcAttributeTypes: {174}( 1.2.40.0.13.1.15.110.3.175 NAME 'dcmDiffStudiesInc
+ ludefieldAll' DESC 'NO LONGER USED - MAY BE DECLARED OBSOLETE IN FUTURE VER
+ SION' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {175}( 1.2.40.0.13.1.15.110.3.176 NAME 'hl7NoPatientCreat
+ eMessageType' DESC 'Message Type(s) (MessageType^TriggerEvent) of HL7 messa
+ ges which are only processed, if there is already a Patient record in the d
+ atabase, which Patient ID matches the Patient ID in the PID or MRG segment 
+ of the message. Thus no new Patient record will be created by messages of t
+ he specified types.' EQUALITY caseExactMatch SUBSTR caseExactSubstringsMatc
+ h SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {176}( 1.2.40.0.13.1.15.110.3.177 NAME 'dcmAttributeSetTy
+ pe' DESC 'Specifies if this Attribute Set is used by Query Parameter "inclu
+ defields" of QIDO-RS and WADO-RS Metadata or by Query Parameter "comparefie
+ ld" of DIFF-RS requests. Enumerated values: QIDO_RS, WADO_RS, DIFF_RS, LEAD
+ ING_CFIND_SCP.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.
+ 1.26 SINGLE-VALUE )
+olcAttributeTypes: {177}( 1.2.40.0.13.1.15.110.3.178 NAME 'dcmAttributeSetID
+ ' DESC 'Value used by Query Parameter "includefields" of QIDO-RS and WADO-R
+ S Metadata requests and by Query Parameter "comparefield" of DIFF-RS reques
+ ts to refer this Attribute Set.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.
+ 4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {178}( 1.2.40.0.13.1.15.110.3.179 NAME 'dcmQueryMaxNumber
+ OfResults' DESC 'Maximal number of return results by C-FIND SCP. If the num
+ ber of matches extends the limit, the C-FIND request will be refused. 0 (=u
+ nlimited) if absent' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.
+ 1.27 SINGLE-VALUE )
+olcAttributeTypes: {179}( 1.2.40.0.13.1.15.110.3.180 NAME 'dcmAttributeSetTi
+ tle' DESC 'Attribute Set Title' EQUALITY caseExactMatch SUBSTR caseExactSub
+ stringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {180}( 1.2.40.0.13.1.15.110.3.181 NAME 'dcmAttributeSetNu
+ mber' DESC 'Attribute Set Number used to order Attribute Sets.' EQUALITY in
+ tegerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {181}( 1.2.40.0.13.1.15.110.3.182 NAME 'dcmSupplementFrom
+ DeviceReference'  DESC 'The DN of a dicomDeviceObject from which Assigning 
+ Authorities and other information is taken to supplement received Composite
+  Objects and MPPS.'  EQUALITY distinguishedNameMatch  SYNTAX 1.3.6.1.4.1.14
+ 66.115.121.1.12  SINGLE-VALUE )
+olcAttributeTypes: {182}( 1.2.40.0.13.1.15.110.3.183 NAME 'dcmSpanningCFindS
+ CP' DESC 'AE Title of external C-FIND SCP to forward C-FIND RQs and backwar
+ d responses according configured Spanning C-Find SCP Policy.' EQUALITY case
+ ExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {183}( 1.2.40.0.13.1.15.110.3.184 NAME 'dcmSpanningCFindS
+ CPPolicy' DESC 'Specifies policy for combining matches returned from config
+ ured Spanning C-Find SCP with matching entries from the archive DB. Enumera
+ ted values: SUPPLEMENT (= returns local matches before additional matches f
+ rom Spanning C-Find SCP ), MERGE (= returns matches from Spanning C-Find SC
+ P before additional local matches), REPLACE (= returns only matches from Sp
+ anning C-Find SCP).' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115
+ .121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {184}( 1.2.40.0.13.1.15.110.3.185 NAME 'dcmSpanningCFindS
+ CPRetrieveAET' DESC 'Specifies Retrieve AE Title(s) in returned matches fro
+ m Spanning C-Find SCP. Keep original Retrieve AE Title(s) returned by Spann
+ ing C-Find SCP if absent.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.14
+ 66.115.121.1.26 )
+olcAttributeTypes: {185}( 1.2.40.0.13.1.15.110.3.186 NAME 'dcmLinkMWLEntryUp
+ datePolicy' DESC 'Specifies update policy for Study attributes on Link of I
+ nstances of another Study with a MWL Entry referring an existing Study. Enu
+ merated values: PRESERVE, SUPPLEMENT, MERGE, OVERWRITE, REPLACE. If absent,
+  PRESERVE will be applied.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1
+ 466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {186}( 1.2.40.0.13.1.15.110.3.187 NAME 'dcmAuditSoftwareC
+ onfigurationVerbose' DESC 'Specifies if Child Objects and Attributes of cre
+ ated Objects should be included in Software Configuration Audit Message. Di
+ sabled if absent.' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.
+ 7 SINGLE-VALUE )
+olcAttributeTypes: {187}( 1.2.40.0.13.1.15.110.3.188 NAME 'hl7OutgoingPatien
+ tUpdateTemplateURI' DESC 'Specifies URI for the style sheet to transcode DI
+ COM object patient attributes to HL7 ADT messages.' EQUALITY caseExactMatch
+  SUBSTR caseExactSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGL
+ E-VALUE )
+olcAttributeTypes: {188}( 1.2.40.0.13.1.15.110.3.189 NAME 'hl7UseNullValue' 
+ DESC 'Specifies if HL7 v2 null values (|""|) are used in sent HL7 messages 
+ for not present or empty entity attributes. Required to unset entity attrib
+ utes at the remote HL7 Application. Disabled if absent.' EQUALITY booleanMa
+ tch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {189}( 1.2.40.0.13.1.15.110.3.190 NAME 'dcmMaxQueueSize' 
+ DESC 'Maximal number of scheduled tasks in the queue. If the number of sche
+ duled tasks reaches the limit, an attempt to schedule another tasks will fa
+ il. 0 = no limitation.' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.1
+ 21.1.27 SINGLE-VALUE )
+olcAttributeTypes: {190}( 1.2.40.0.13.1.15.110.3.191 NAME 'dcmNullifyTag' DE
+ SC 'DICOM Tag of Attribute to be nullified as hex string' EQUALITY caseExac
+ tIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {191}( 1.2.40.0.13.1.15.110.3.192 NAME 'dcmExportPriority
+ ' DESC 'JMS Priority Level for processing the Export Task from 0 (lowest) t
+ o 9 (highest). 4 if absent.' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.
+ 115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {192}( 1.2.40.0.13.1.15.110.3.193 NAME 'dcmQueueTasksFetc
+ hSize' DESC 'Maximal number of Tasks rescheduled or deleted or canceled in 
+ one transaction; 100 if absent' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.14
+ 66.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {193}( 1.2.40.0.13.1.15.110.3.194 NAME 'dcmRejectionNoteS
+ torageAET' DESC 'Title of Archive Application Entity, of which first config
+ ured Object Storage will be used for storing Rejection Notes generated eith
+ er by IOCM-RS services or by Delete Expired Studies Scheduler. If absent, f
+ or IOCM services the Object Storage configured for Archive AE referred in t
+ he IOCM-RS request will be used, or for Delete Expired Studies Scheduler th
+ e Object Storage configured for Reject Expired Studies AE will be used.' EQ
+ UALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE 
+ )
+olcAttributeTypes: {194}( 1.2.40.0.13.1.15.110.3.195 NAME 'dcmXRoadProperty'
+  DESC 'Properties for accessing Estonian National Patient Registry in forma
+ t <name>=<value>' EQUALITY caseExactMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1
+ .15 )
+olcAttributeTypes: {195}( 1.2.40.0.13.1.15.110.3.196 NAME 'dcmUIConfiguratio
+ nDeviceName' DESC 'Specifies the device name containing the Archive UI Conf
+ iguration.' EQUALITY caseExactMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SI
+ NGLE-VALUE )
+olcAttributeTypes: {196}( 1.2.40.0.13.1.15.110.3.197 NAME 'dcmDeIdentificati
+ on' DESC 'De-identify objects according the Basic Application Level Confide
+ ntiality Profile specified in DICOM PS3.15. Selecting any Option implicitly
+  includes the Basic Application Level Confidentiality Profile. Enumerated v
+ alues: BasicApplicationConfidentialityProfile, RetainLongitudinalTemporalIn
+ formationFullDatesOption, RetainDeviceIdentityOption, RetainUIDsOption, Ret
+ ainInstitutionIdentityOption.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.
+ 1.1466.115.121.1.26 )
+olcAttributeTypes: {197}( 1.2.40.0.13.1.15.110.3.198 NAME 'dcmNullifyIssuerO
+ fPatientID' DESC 'Conditionally nullify Issuer of Patient ID (0010,0021) an
+ d Issuer of Patient ID Qualifiers Sequence (0010,0024) from received object
+ s. Enumerated values: ALWAYS, MATCHING, NOT_MATCHING.' EQUALITY caseExactIA
+ 5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {198}( 1.2.40.0.13.1.15.110.3.199 NAME 'dcmIssuerOfPatien
+ tID' DESC 'Issuer of Patient ID (0010,0021), and optionally also values for
+  the Universal Entity ID (0040,0032) and the Universal Entity ID Type (0040
+ ,0033) of the Item of the Issuer of Patient ID Qualifiers Sequence (0010,00
+ 24) against values in received objects are matched, if dcmNullifyIssuerOfPa
+ tientID is MATCHING or NOT_MATCHING. Format: <Issuer of Patient ID> [& <Uni
+ versal Entity ID> & <Universal Entity ID Type>].' EQUALITY caseExactMatch S
+ UBSTR caseExactSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {199}( 1.2.40.0.13.1.15.110.3.200 NAME 'dcmStartRetention
+ PeriodOnStudyDate' DESC 'Indicates if retention period should be started on
+  Study Date. Disabled if absent.' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.
+ 1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {200}( 1.2.40.0.13.1.15.110.3.201 NAME 'dcmKeycloakServer
+ ID' DESC 'Keycloak server identifier' EQUALITY caseExactMatch SYNTAX 1.3.6.
+ 1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {201}( 1.2.40.0.13.1.15.110.3.208 NAME 'dcmExportStorageI
+ D' DESC 'Constrains deletion of Studies from the Storage System to Studies 
+ which objects are also accessible from the specified other storage.' EQUALI
+ TY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {202}( 1.2.40.0.13.1.15.110.3.209 NAME 'dcmNoDeletionCons
+ traint' DESC 'Delete all Studies from cache/temporary Storage System, if no
+  Deleter Threshold and no other deletion constraint is configured; false if
+  absent.' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-
+ VALUE )
+olcAttributeTypes: {203}( 1.2.40.0.13.1.15.110.3.210 NAME 'dcmRetrieveCacheS
+ torageID' DESC 'Specifies another Storage to which objects are copied in pa
+ rallel on retrieve to increase the performance on accessing storage systems
+  which provides more bandwidth using multiple connections in parallel.' EQU
+ ALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {204}( 1.2.40.0.13.1.15.110.3.211 NAME 'dcmRetrieveCacheM
+ axParallel' DESC 'Maximal number of parallel copies to cache storage on ret
+ rieve specified by dcmRetrieveCacheStorageID; 10 if absent.' EQUALITY integ
+ erMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {205}( 1.2.40.0.13.1.15.110.3.212 NAME 'dcmPurgeInstanceR
+ ecords' DESC 'Indicates that Instance Records may be purged from the DB; di
+ sabled if absent' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7
+  SINGLE-VALUE )
+olcAttributeTypes: {206}( 1.2.40.0.13.1.15.110.3.213 NAME 'dcmAllowDeletePat
+ ient' DESC 'Allow permanent deletion of Patients. Enumerated values: NEVER,
+  ALWAYS, WITHOUT_STUDIES. If absent, WITHOUT_STUDIES will be applied.' EQUA
+ LITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {207}( 1.2.40.0.13.1.15.110.3.214 NAME 'dcmImpaxReportPro
+ perty' DESC 'Properties for accessing Agfa Impax Report Service in format <
+ name>=<value>' EQUALITY caseExactMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+  )
+olcAttributeTypes: {208}( 1.2.40.0.13.1.15.110.3.215 NAME 'dcmWadoZIPEntryNa
+ meFormat' DESC 'Format of entry names in ZIP archive returned by WADO-RS. "
+ DICOM/{0020000D,hash}/{0020000E,hash}/{00080018,hash}", if absent.' EQUALIT
+ Y caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {209}( 1.2.40.0.13.1.15.110.3.216 NAME 'dcmStorageCluster
+ ID' DESC 'Identifies a Storage to belong to a Storage Cluster. Objects of o
+ ne Study may be distributed over Storage Systems of one Storage Cluster. Us
+ ed by threshold triggered deletion.' EQUALITY caseExactIA5Match SYNTAX 1.3.
+ 6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {210}( 1.2.40.0.13.1.15.110.3.217 NAME 'dcmWadoCDA2HtmlTe
+ mplateURI' DESC 'URL to XSL style sheet inserted as <?xml-stylesheet type="
+ text/xsl" href="<url>" > in CDA documents returned by WADO-URI service. If 
+ absent, the embedded CDI document is returned verbatim.' EQUALITY caseExact
+ Match SUBSTR caseExactSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 
+ SINGLE-VALUE )
+olcAttributeTypes: {211}( 1.2.40.0.13.1.15.110.3.218 NAME 'dcmStgCmtPolicy' 
+ DESC 'NO LONGER USED - MAY BE DECLARED OBSOLETE IN FUTURE VERSION' EQUALITY
+  caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {212}( 1.2.40.0.13.1.15.110.3.219 NAME 'dcmStgCmtUpdateLo
+ cationStatus' DESC 'NO LONGER USED - MAY BE DECLARED OBSOLETE IN FUTURE VER
+ SION' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALU
+ E )
+olcAttributeTypes: {213}( 1.2.40.0.13.1.15.110.3.220 NAME 'dcmStgCmtStorageI
+ D' DESC 'NO LONGER USED - MAY BE DECLARED OBSOLETE IN FUTURE VERSION' EQUAL
+ ITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {214}( 1.2.40.0.13.1.15.110.3.221 NAME 'dcmURIPattern' DE
+ SC 'Only forward requests which match the given Regular Expression. If pref
+ ixed with !, only forward requests which does not match the given Regular E
+ xpression.' EQUALITY caseExactMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SI
+ NGLE-VALUE )
+olcAttributeTypes: {215}( 1.2.40.0.13.1.15.110.3.222 NAME 'dcmStorageVerific
+ ationPolicy' DESC 'Storage Verification Policy: DB_RECORD_EXISTS (= only ch
+ eck for existence of DB records), OBJECT_EXISTS (= check if object exists o
+ n Storage System), OBJECT_SIZE (= check size of object on Storage System), 
+ OBJECT_FETCH (= fetch object from Storage System), OBJECT_CHECKSUM (= recal
+ culate checksum of object on Storage System) or S3_MD5SUM (= check MD5 chec
+ ksum of object on S3 Storage System). OBJECT_CHECKSUM if absent.' EQUALITY 
+ caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {216}( 1.2.40.0.13.1.15.110.3.223 NAME 'dcmStorageVerific
+ ationUpdateLocationStatus' DESC 'Indicates if the Status of the Location DB
+  record shall be updated on Storage Verification accordingly. Not effective
+  with Storage Verification Policy: DB_RECORD_EXISTS. False if absent.' EQUA
+ LITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {217}( 1.2.40.0.13.1.15.110.3.224 NAME 'dcmStorageVerific
+ ationStorageID' DESC 'Indicates that the object must be stored on (one of) 
+ the specified Storage System for successful Storage Verification. If absent
+ , storage on any Storage System is sufficient. Not effective with Storage V
+ alidation Policy: DB_RECORD_EXISTS.' EQUALITY caseExactIA5Match SYNTAX 1.3.
+ 6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {218}( 1.2.40.0.13.1.15.110.3.225 NAME 'dcmStorageVerific
+ ationAETitle' DESC 'Archive AE Title used for scheduled Storage Verificatio
+ ns.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE
+ -VALUE )
+olcAttributeTypes: {219}( 1.2.40.0.13.1.15.110.3.226 NAME 'dcmStorageVerific
+ ationBatchID' DESC 'Batch ID of Storage Verification Tasks triggered by sch
+ eduler.' EQUALITY caseExactMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGL
+ E-VALUE )
+olcAttributeTypes: {220}( 1.2.40.0.13.1.15.110.3.227 NAME 'dcmStorageVerific
+ ationInitialDelay' DESC 'Delay in ISO-8601 duration format PnYnMnD or PnW o
+ f first Storage Verification of a Series after it was received.' EQUALITY c
+ aseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {221}( 1.2.40.0.13.1.15.110.3.228 NAME 'dcmStorageVerific
+ ationPeriod' DESC 'Period between successive Storage Verifications of one S
+ eries in ISO-8601 period format PnYnMnD or PnW.' EQUALITY caseExactIA5Match
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {222}( 1.2.40.0.13.1.15.110.3.229 NAME 'dcmStorageVerific
+ ationMaxScheduled' DESC 'Maximal number of scheduled Storage Verification t
+ asks on this device. Shall be set > 0 to distribute tasks over nodes of a c
+ lustered archive. No limitation (=0) if absent.' EQUALITY integerMatch SYNT
+ AX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {223}( 1.2.40.0.13.1.15.110.3.230 NAME 'dcmStorageVerific
+ ationPollingInterval' DESC 'Polling Interval for Series scheduled for Stora
+ ge Verification in ISO-8601 duration format PnDTnHnMn.nS.' EQUALITY caseExa
+ ctIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {224}( 1.2.40.0.13.1.15.110.3.231 NAME 'dcmStorageVerific
+ ationSchedule' DESC 'Limits Storage Verification to specified times in form
+ at "hour=[0-23] dayOfWeek=[0-6]" (0=Sunday).' EQUALITY caseExactIA5Match SY
+ NTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {225}( 1.2.40.0.13.1.15.110.3.232 NAME 'dcmStorageVerific
+ ationFetchSize' DESC 'Maximal number of Series scheduled for Storage Verifi
+ cation fetched by one query.' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466
+ .115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {226}( 1.2.40.0.13.1.15.110.3.233 NAME 'dcmCompressionPol
+ lingInterval' DESC 'Polling Interval for Series to be compressed in ISO-860
+ 1 duration format PnDTnHnMn.nS.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.
+ 4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {227}( 1.2.40.0.13.1.15.110.3.234 NAME 'dcmCompressionFet
+ chSize' DESC 'Maximal number of Series fetched for compression by one query
+ .' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE 
+ )
+olcAttributeTypes: {228}( 1.2.40.0.13.1.15.110.3.235 NAME 'dcmCompressionSch
+ edule' DESC 'Limits compression to specified times in format "hour=[0-23] d
+ ayOfWeek=[0-6]" (0=Sunday).' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.
+ 1466.115.121.1.26 )
+olcAttributeTypes: {229}( 1.2.40.0.13.1.15.110.3.236 NAME 'dcmCompressionThr
+ eads' DESC 'Number of Threads used for Compression. 1 if absent.' EQUALITY 
+ integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {230}( 1.2.40.0.13.1.15.110.3.237 NAME 'dcmCompressionAET
+ itle' DESC 'Archive AE Title used for delayed Compression.' EQUALITY caseEx
+ actIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {231}( 1.2.40.0.13.1.15.110.3.238 NAME 'dcmCompressionDel
+ ay' DESC 'Compression delay in ISO-8601 duration format PnDTnHnMn.nS. Compr
+ ess on receive if absent.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.14
+ 66.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {232}( 1.2.40.0.13.1.15.110.3.239 NAME 'dcmDiffTaskProgre
+ ssUpdateInterval' DESC 'Interval of updating Diff Tasks in process for prog
+ ress monitoring in ISO-8601 duration format PnDTnHnMn.nS; disabled if absen
+ t.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-
+ VALUE )
+olcAttributeTypes: {233}( 1.2.40.0.13.1.15.110.3.240 NAME 'dcmEntitySelector
+ ' DESC 'Specifies matching keys used to select entities to prefetch. Format
+ : {key}={value}[&{key}={value}]..., with {key} = "priors" | "StudyAge" | {a
+ ttributeID}. Example: "priors=2&StudyAge=-5Y&ModalitiesInStudy=CT" => selec
+ t at most 2 prior Studies not older than 5 years containing at least one CT
+  Series.' EQUALITY caseExactMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {234}( 1.2.40.0.13.1.15.110.3.241 NAME 'dcmMaxRetentionPe
+ riod' DESC 'Maximum Study Retention Period in ISO-8601 period format PnYnMn
+ D or PnW.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 
+ SINGLE-VALUE )
+olcAttributeTypes: {235}( 1.2.40.0.13.1.15.110.3.242 NAME 'dcmPDQServiceID' 
+ DESC 'PDQ Service ID' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.11
+ 5.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {236}( 1.2.40.0.13.1.15.110.3.243 NAME 'dcmPatientVerific
+ ationPDQServiceID' DESC 'ID of PDQ Service used for Verification of Patient
+  Demographic. If absent, no Patient Verification will be performed.' EQUALI
+ TY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {237}( 1.2.40.0.13.1.15.110.3.244 NAME 'dcmPatientVerific
+ ationPollingInterval' DESC 'Patient Verification Polling Interval in ISO-86
+ 01 duration format PnDTnHnMn.nS. If absent, no Patient Verification will be
+  performed.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.2
+ 6 SINGLE-VALUE )
+olcAttributeTypes: {238}( 1.2.40.0.13.1.15.110.3.245 NAME 'dcmPatientVerific
+ ationFetchSize' DESC 'Maximal number of Patients fetched for Patient Verifi
+ cation in one query; 100 if absent' EQUALITY integerMatch SYNTAX 1.3.6.1.4.
+ 1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {239}( 1.2.40.0.13.1.15.110.3.246 NAME 'dcmPatientVerific
+ ationPeriod' DESC 'Period in ISO-8601 duration format PnYnMnD or PnW, in wh
+ ich Patient Demographic will be verified. If absent, Patient Verification w
+ ill not be renewed for Patients verified in the past.' EQUALITY caseExactIA
+ 5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {240}( 1.2.40.0.13.1.15.110.3.247 NAME 'dcmPatientVerific
+ ationPeriodOnNotFound' DESC 'Period in ISO-8601 duration format PnYnMnD or 
+ PnW, in which Patient Verification will be retried for Patients which were 
+ not found by the configured PDQ Service on last attempt. If absent, Patient
+  Verification will not be retried for Patients not found in the past.' EQUA
+ LITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {241}( 1.2.40.0.13.1.15.110.3.248 NAME 'dcmPatientVerific
+ ationRetryInterval' DESC 'Patient Verification Retry Interval in ISO-8601 d
+ uration format PnDTnHnMn.nS, in which failed attempts to verify Patient Dem
+ ographics against the PDQ Service configured by dcmPatientVerificationPDQSe
+ rviceID will be retried until the maximal number of retries specified by dc
+ mPatientVerificationMaxRetries is reached. If absent, failed Patient Verifi
+ cation attempts will not be retried.' EQUALITY caseExactIA5Match SYNTAX 1.3
+ .6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {242}( 1.2.40.0.13.1.15.110.3.249 NAME 'dcmPatientVerific
+ ationMaxRetries' DESC 'Maximum number of retries to verify Patient Demograp
+ hics against the PDQ Service configured by dcmPatientVerificationPDQService
+ ID. Only effective if dcmPatientVerificationRetryInterval is specified. -1 
+ = forever. 0 if absent.' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.
+ 121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {243}( 1.2.40.0.13.1.15.110.3.250 NAME 'dcmPatientVerific
+ ationMaxStaleness' DESC 'Indicates to renew the verification of Patient Dem
+ ographics on receive of objects for a patient, if previous verification is 
+ longer ago as the specified Interval in ISO-8601 duration format PnDTnHnMn.
+ nS. If absent, Patient Verification on receive of objects is disabled.' EQU
+ ALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {244}( 1.2.40.0.13.1.15.110.3.251 NAME 'dcmDeleterThreads
+ ' DESC 'Number of Threads used for deletion of objects from the Storage Sys
+ tem. 1 if absent.' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.
+ 27 SINGLE-VALUE )
+olcAttributeTypes: {245}( 1.2.40.0.13.1.15.110.3.252 NAME 'dcmSeriesMetadata
+ Threads' DESC 'Number of Threads used for creation and update of Series Met
+ adata. 1 if absent.' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.
+ 1.27 SINGLE-VALUE )
+olcAttributeTypes: {246}( 1.2.40.0.13.1.15.110.3.253 NAME 'dcmPatientVerific
+ ationAdjustIssuerOfPatientID' DESC 'Indicates if the Issuer Of Patient ID s
+ hall be adjusted to the value returned by the PDQ Service. False if absent.
+ ' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {247}( 1.2.40.0.13.1.15.110.3.254 NAME 'dcmPurgeQueueMess
+ ageFailedDelay' DESC 'Delay in ISO-8601 duration format PnDTnHnMn.nS after 
+ which failed queue messages are purged. If absent, there is no deletion for
+  that particular queue' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.
+ 115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {248}( 1.2.40.0.13.1.15.110.3.255 NAME 'dcmPurgeQueueMess
+ ageWarningDelay' DESC 'Delay in ISO-8601 duration format PnDTnHnMn.nS after
+  which warning queue messages are purged. If absent, there is no deletion f
+ or that particular queue' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.146
+ 6.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {249}( 1.2.40.0.13.1.15.110.3.256 NAME 'dcmPurgeQueueMess
+ ageCanceledDelay' DESC 'Delay in ISO-8601 duration format PnDTnHnMn.nS afte
+ r which canceled queue messages are purged. If absent, there is no deletion
+  for that particular queue' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1
+ 466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {250}( 1.2.40.0.13.1.15.110.3.257 NAME 'dcmPrefetchCFindS
+ CP' DESC 'AE Title of C-FIND SCP which is queried for Studies matching the 
+ specified Entity Selector.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1
+ 466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {251}( 1.2.40.0.13.1.15.110.3.258 NAME 'dcmPrefetchCMoveS
+ CP' DESC 'AE Title of C-MOVE SCP from which selected Studies are retrieved.
+ ' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VA
+ LUE )
+olcAttributeTypes: {252}( 1.2.40.0.13.1.15.110.3.259 NAME 'dcmPrefetchCStore
+ SCP' DESC 'AE Title of C-STORE SCP to which selected Studies are retrieved.
+ ' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {253}( 1.2.40.0.13.1.15.110.3.260 NAME 'dcmFailedToDelete
+ PollingInterval' DESC 'Polling Interval for resolving deletion failures in 
+ ISO-8601 duration format PnDTnHnMnS.' EQUALITY caseExactIA5Match SYNTAX 1.3
+ .6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {254}( 1.2.40.0.13.1.15.110.3.261 NAME 'dcmFailedToDelete
+ FetchSize' DESC 'Maximal number of Location records fetched for resolving d
+ eletion failures in one query; 100 if absent.' EQUALITY integerMatch SYNTAX
+  1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {255}( 1.2.40.0.13.1.15.110.3.262 NAME 'dcmSeriesMetadata
+ RetryInterval' DESC 'Interval in ISO-8601 duration format PnDTnHnMnS in whi
+ ch failed attempts to create/update aggregated Series Metadata will be retr
+ ied. Only effective if dcmSeriesMetadataMaxRetries != 0. If absent, failed 
+ attempts will not be retried.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.
+ 1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {256}( 1.2.40.0.13.1.15.110.3.263 NAME 'dcmStorageDuratio
+ n' DESC 'Indicates if the Storage is used as permanent (=PERMANENT), cache 
+ (=CACHE) or temporary (=TEMPORARY) storage. Objects get purged from cache a
+ nd temporary storage according configured deleter thresholds or - if no del
+ eter threshold is specified - all objects on the Storage will get purged. I
+ n the case of temporary storage, the studies which objects were purged are 
+ also deleted from the database. Enumerated values: PERMANENT, CACHE, TEMPOR
+ ARY. If absent, PERMANENT will be applied.' EQUALITY caseExactIA5Match SYNT
+ AX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {257}( 1.2.40.0.13.1.15.110.3.264 NAME 'dcmDeleteStudyFro
+ mStorageID' DESC 'ID of Storage System from which the objects of the export
+ ed Study shall be deleted. Only effective for Export Tasks on Study level.'
+  EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VAL
+ UE )
+olcAttributeTypes: {258}( 1.2.40.0.13.1.15.110.3.265 NAME 'dcmUpdateLocation
+ StatusOnRetrieve' DESC 'Indicates if the Status of the Location DB record s
+ hall be updated for objects failed to get fetched from storage on retrieve 
+ to MISSING_OBJECT or FAILED_TO_FETCH_OBJECT. False if absent.' EQUALITY boo
+ leanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {259}( 1.2.40.0.13.1.15.110.3.266 NAME 'dcmReturnRetrieve
+ AET' DESC 'Retrieve AE Title returned in C-FIND and QIDO responses. If abse
+ nt, the Retrieve AET associated with the archived entity will be returned.'
+  EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {260}( 1.2.40.0.13.1.15.110.3.267 NAME 'dcmRejectForDataR
+ etentionExpiry' DESC 'Reject entity for Data Retention Expiry after export 
+ on completion of Export Task; false if absent' EQUALITY booleanMatch SYNTAX
+  1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {261}( 1.2.40.0.13.1.15.110.3.268 NAME 'dcmRejectExpiredS
+ tudiesSchedule' DESC 'Limits Rejection of Expired Studies to specified time
+ s in format "hour=[0-23] dayOfWeek=[0-6]" (0=Sunday).' EQUALITY caseExactIA
+ 5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {262}( 1.2.40.0.13.1.15.110.3.269 NAME 'dcmFreezeExpirati
+ onDate' DESC 'Indicate to disable changes of the Expiration Date by followi
+ ng event; false if absent.' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.1
+ 15.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {263}( 1.2.40.0.13.1.15.110.3.270 NAME 'dcmRevokeExpirati
+ on' DESC 'Indicate to revoke a previous set Expiration Date; false if absen
+ t.' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE 
+ )
+olcAttributeTypes: {264}( 1.2.40.0.13.1.15.110.3.271 NAME 'dcmRetrieveAsRece
+ ived' DESC 'Disables merge of DB information into the retrieved Composite O
+ bject, returning the objects as received. Only effective with dcmDIMSE=C_ST
+ ORE_RQ and dicomTransferRole=SCP; false if absent.' EQUALITY booleanMatch S
+ YNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {265}( 1.2.40.0.13.1.15.110.3.272 NAME 'dcmStorageVerific
+ ationOnRetrieve' DESC 'Indicates if failures to fetch an object from Storag
+ e on retrieve shall trigger a Storage Verification of the whole Series. Fal
+ se if absent.' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SI
+ NGLE-VALUE )
+olcAttributeTypes: {266}( 1.2.40.0.13.1.15.110.3.273 NAME 'hl7ImportReportTe
+ mplateParam' DESC 'XSLT parameters passed to style sheet specified by hl7Im
+ portReportTemplateURI. Format: {name}={value}.' EQUALITY caseExactMatch SYN
+ TAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {267}( 1.2.40.0.13.1.15.110.3.274 NAME 'hl7OrderMissingSt
+ udyIUIDPolicy' DESC 'Specifies policy for missing Study Instance UID in inc
+ oming HL7 Order messages. Enumerated values: REJECT, GENERATE, ACCESSION_BA
+ SED. If absent, GENERATE will be applied.' EQUALITY caseExactIA5Match SYNTA
+ X 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {268}( 1.2.40.0.13.1.15.110.3.275 NAME 'hl7DicomCharacter
+ Set' DESC 'Indicates to use specified Value of Specific Character Set (0008
+ ,0005) in Data Sets transcoded from received HL7 messages. Use Value corres
+ ponding to Character Set of the HL7 message specified by MSH-18 if absent.'
+  EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VAL
+ UE )
+olcAttributeTypes: {269}( 1.2.40.0.13.1.15.110.3.276 NAME 'hl7VeterinaryUseP
+ atientName' DESC 'Indicates to force veterinary use of Patient Names on map
+ ping HL7 PID fields to DICOM attributes: only use the first two components 
+ of PID.5 as DICOM Patient Name; if PID.5 only contains one component, use t
+ hat value as given name, and the first component of PID.9 as family name of
+  the DICOM Patient Name. Disabled if absent.' EQUALITY booleanMatch SYNTAX 
+ 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {270}( 1.2.40.0.13.1.15.110.3.277 NAME 'dcmSeriesMetadata
+ MaxRetries' DESC 'Maximal number of retries to create/update aggregated Ser
+ ies Metadata. Only effective if dcmSeriesMetadataRetryInterval is specified
+ . -1 = forever. 0 if absent.' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466
+ .115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {271}( 1.2.40.0.13.1.15.110.3.278 NAME 'dcmCSVUploadChunk
+ Size' DESC 'Number of CSV file upload tasks to be processed in one transact
+ ion; 100 if absent.' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.
+ 1.27 SINGLE-VALUE )
+olcAttributeTypes: {272}( 1.2.40.0.13.1.15.110.3.279 NAME 'dcmValidateUID' D
+ ESC 'Indicates if UIDs shall be validated or not. Enabled if absent.' EQUAL
+ ITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {273}( 1.2.40.0.13.1.15.110.3.280 NAME 'dcmExportReoccurr
+ edInstances' DESC 'Indicates if the entity shall be exported on subsequent 
+ occurrence of instances. Enumerated values: NEVER, ALWAYS, REPLACE. If abse
+ nt, REPLACE will be applied.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1
+ .1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {274}( 1.2.40.0.13.1.15.110.3.281 NAME 'dcmRejectConflict
+ ingPatientAttribute' DESC 'DICOM Tag of Patient Attribute which have to mat
+ ch in received objects with the value in previous received objects with equ
+ al Patient ID to be accepted.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.
+ 1.1466.115.121.1.26 )
+olcAttributeTypes: {275}( 1.2.40.0.13.1.15.110.3.282 NAME 'dcmIssuerOfPatien
+ tIDFormat' DESC 'Format of Issuer of Patient ID (0010,0021) derived from ot
+ her attributes. E.g. "{00100010,hash}-{00100030}": use hash value of Patien
+ t Name and Birth Date separated by "-". For coercion of existing values of 
+ Issuer of Patient ID in received objects also dcmNullifyIssuerOfPatientID m
+ ust be set accordingly.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466
+ .115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {276}( 1.2.40.0.13.1.15.110.3.283 NAME 'dcmDeleteStudiesO
+ lderThan' DESC 'Delete Studies from the Storage System configured for cache
+  (dcmStorageDuration=CACHE) or temporary (dcmStorageDuration=TEMPORARY) sto
+ rage, if their Study Date is longer ago than the specified value in ISO-860
+ 1 period format. Format [nn"["<schedule>"]"](PnYnMnD|PnW).' EQUALITY caseEx
+ actIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {277}( 1.2.40.0.13.1.15.110.3.284 NAME 'dcmDeleteStudiesR
+ eceivedBefore' DESC 'Delete Studies from the Storage System configured for 
+ cache (dcmStorageDuration=CACHE) or temporary (dcmStorageDuration=TEMPORARY
+ ) storage, if they were received longer ago than the specified value in ISO
+ -8601 period format. Format [nn"["<schedule>"]"](PnYnMnD|PnW).' EQUALITY ca
+ seExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {278}( 1.2.40.0.13.1.15.110.3.285 NAME 'dcmDeleteStudiesN
+ otUsedSince' DESC 'Delete Studies from the Storage System configured for ca
+ che (dcmStorageDuration=CACHE) or temporary (dcmStorageDuration=TEMPORARY) 
+ storage, if they were last accessed longer ago than the specified value in 
+ ISO-8601 period format. Format [nn"["<schedule>"]"](PnYnMnD|PnW).' EQUALITY
+  caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {279}( 1.2.40.0.13.1.15.110.3.286 NAME 'dcmRelationalQuer
+ yNegotiationLenient' DESC 'Indicates to accept C-FIND RQs without unique ke
+ ys for levels above the query level also if support for relational-queries 
+ was not negotiated; default is false.' EQUALITY booleanMatch SYNTAX 1.3.6.1
+ .4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {280}( 1.2.40.0.13.1.15.110.3.287 NAME 'dcmRelationalRetr
+ ieveNegotiationLenient' DESC 'Indicates to accept C-MOVE and C-GET RQs with
+ out unique keys for levels above the query level also if support for relati
+ onal-queries was not negotiated; default is false.' EQUALITY booleanMatch S
+ YNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {281}( 1.2.40.0.13.1.15.110.3.288 NAME 'dcmStoreUpdateDBM
+ inRetryDelay' DESC 'Minimal delay in ms between retries to update the datab
+ ase on storage; 500 if absent' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.146
+ 6.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {282}( 1.2.40.0.13.1.15.110.3.289 NAME 'dcmStowRetiredTra
+ nsferSyntax' DESC 'Store received JPEG Full Progression, Non-Hierarchical J
+ PEG images in DICOM images with corresponding (retired) Transfer Syntax UID
+  1.2.840.10008.1.2.4.55. Otherwise set 1.2.840.10008.1.2.4.50 (= JPEG Basel
+ ine) or 1.2.840.10008.1.2.4.51 (= JPEG Extended) as Transfer Syntax UID of 
+ the stored DICOM image, without transcoding to JPEG Baseline or JPEG Extend
+ ed, but including the JPEG image as received; false if absent.' EQUALITY bo
+ oleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {283}( 1.2.40.0.13.1.15.110.3.290 NAME 'dcmSchedulerMinSt
+ artDelay' DESC 'Minimal delay in s to start schedulers on system start up; 
+ 60 if absent' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SI
+ NGLE-VALUE )
+olcAttributeTypes: {284}( 1.2.40.0.13.1.15.110.3.291 NAME 'dcmMetricsName' D
+ ESC 'Metrics Name' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.1
+ 21.1.26 SINGLE-VALUE )
+olcAttributeTypes: {285}( 1.2.40.0.13.1.15.110.3.292 NAME 'dcmMetricsRetenti
+ onPeriod' DESC 'Metrics Retention Period in minutes; 60 if absent' EQUALITY
+  integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {286}( 1.2.40.0.13.1.15.110.3.293 NAME 'dcmUnit' DESC 'Un
+ it of metrics data' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.
+ 121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {287}( 1.2.40.0.13.1.15.110.3.294 NAME 'dcmAcceptRejectio
+ nBeforeStorage' DESC 'Time interval in ISO-8601 duration format PnDTnHnMn.n
+ S after receive of a Rejection Note, in which received object referenced by
+  this Rejection Note are treated as rejected. Referenced objects received a
+ fterwards are treated as subsequent occurrence of an already rejected insta
+ nce. If not present, Rejection Notes which refers not yet received objects 
+ will not be accepted.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.1
+ 15.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {288}( 1.2.40.0.13.1.15.110.3.295 NAME 'dcmStowExcludeAPP
+ Markers' DESC 'Indicates if APP markers in JPEG images received in STOW-RS 
+ Metadata and Bulkdata requests shall be excluded from the JPEG bit streams 
+ encapsulated in created DICOM instances; false if absent.' EQUALITY boolean
+ Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {289}( 1.2.40.0.13.1.15.110.3.296 NAME 'dcmFallbackCMoveS
+ CPCallingAET' DESC 'Calling AE Title used in A-ASSOCIATE-RQ to configured F
+ allback C-MOVE SCP. If absent, the AE Title of the external C-MOVE SCU is u
+ sed.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGL
+ E-VALUE )
+olcAttributeTypes: {290}( 1.2.40.0.13.1.15.110.3.297 NAME 'hl7ImportReportMi
+ ssingStudyIUIDPolicy' DESC 'Specifies policy for missing Study Instance UID
+  in incoming HL7 Import Report (ORU) messages. Enumerated values: REJECT, G
+ ENERATE, ACCESSION_BASED. If absent, GENERATE will be applied.' EQUALITY ca
+ seExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {291}( 1.2.40.0.13.1.15.110.3.298 NAME 'dcmWadoSupportedP
+ RClasses' DESC 'Supported PR SOP classes for WADO retrieve of rendered Inst
+ ances' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {292}( 1.2.40.0.13.1.15.110.3.299 NAME 'dcmWadoThumbnailV
+ iewport' DESC 'Dimension of Thumbnails returned by WADO retrieve of Instanc
+ e Thumbnails, if no Viewport is specified in the request. Format: <width>,<
+ height>. If absent, "64,64" will be applied.' EQUALITY caseExactIA5Match SY
+ NTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {293}( 1.2.40.0.13.1.15.110.3.300 NAME 'dcmTrimISO2022Cha
+ racterSet' DESC 'Replace single code for Single-Byte Character Sets with Co
+ de Extensions by code for Single-Byte Character Sets without Code Extension
+ s' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {294}( 1.2.40.0.13.1.15.110.3.301 NAME 'dcmStorePermissio
+ nServiceResponse' DESC 'Emulate Store Permission Service Response on receiv
+ e of the first object of a study by any AE. {<attributeID>} will be replace
+ d by the value of the attribute in the object.' EQUALITY caseExactMatch SYN
+ TAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {295}( 1.2.40.0.13.1.15.110.3.302 NAME 'dcmUPSWorklistLab
+ el' DESC 'Value of Worklist Label (0074,1202) in created UPS, if the UPS Pu
+ sh SCU or UPS-RS User Agent does not provide a value for this attribute. If
+  absent, the AE Title of the receiving AE will be used.' EQUALITY caseExact
+ Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {296}( 1.2.40.0.13.1.15.110.3.303 NAME 'dcmUPSEventSCU' D
+ ESC 'AE Title of UPS Event SOP Class SCU, to which UPS Event Reports are se
+ nt - independently if the subscription was created by the N-ACTION DIMSE se
+ rvice, or by a corresponding UPS RESTful service.' EQUALITY caseExactIA5Mat
+ ch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {297}( 1.2.40.0.13.1.15.110.3.304 NAME 'dcmRestrictRetrie
+ veAccordingTransferCapabilities' DESC 'NO LONGER USED - MAY BE DECLARED OBS
+ OLETE IN FUTURE VERSION.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.146
+ 6.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {298}( 1.2.40.0.13.1.15.110.3.306 NAME 'dcmDeleteUPSPolli
+ ngInterval' DESC 'Polling Interval for deleting Unified Procedure Steps (UP
+ S) in ISO-8601 duration format PnDTnHnMnS. If absent, Unified Procedure Ste
+ ps will not get deleted.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.146
+ 6.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {299}( 1.2.40.0.13.1.15.110.3.307 NAME 'dcmDeleteUPSFetch
+ Size' DESC 'Maximal number of Unified Procedure Steps (UPS) to delete in on
+ e transaction; 100 if absent.' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.146
+ 6.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {300}( 1.2.40.0.13.1.15.110.3.308 NAME 'dcmDeleteUPSCompl
+ etedDelay' DESC 'Delay in ISO-8601 duration format PnDTnHnMn.nS for deletin
+ g completed Unified Procedure Steps without Deletion Lock. If absent, compl
+ eted Unified Procedure Steps without Deletion Lock are deleted immediately.
+ ' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VA
+ LUE )
+olcAttributeTypes: {301}( 1.2.40.0.13.1.15.110.3.309 NAME 'dcmDeleteUPSCance
+ ledDelay' DESC 'Delay in ISO-8601 duration format PnDTnHnMn.nS for deleting
+  canceled Unified Procedure Steps without Deletion Lock. If absent, cancele
+ d Unified Procedure Steps without Deletion Lock are deleted immediately.' E
+ QUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE
+  )
+olcAttributeTypes: {302}( 1.2.40.0.13.1.15.110.3.310 NAME 'dcmUPSEventSCUKee
+ pAlive' DESC 'Timeout in ms to keep associations to UPS Event SCUs alive. I
+ f absent, associations will not be reused for sending multiple UPS Event Re
+ ports to one UPS Event SCU.' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.
+ 115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {303}( 1.2.40.0.13.1.15.110.3.311 NAME 'dcmUseCallingAETi
+ tleAs' DESC 'Identifies the attribute which is set to the value of the Call
+ ing AET if it is absent or empty. Enumerated values: ScheduledStationAETitl
+ e (= Scheduled Station AE Title (0040,0001) in item of Scheduled Procedure 
+ Step Sequence (0040,0100)), SendingApplicationEntityTitleOfSeries (= Sendin
+ g Application Entity Title of Series (7777,xx37)).' EQUALITY caseExactIA5Ma
+ tch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {304}( 1.2.40.0.13.1.15.110.3.312 NAME 'dcmMultipleStoreA
+ ssociations' DESC 'Number of Storage Associations used for retrieve of Comp
+ osite Objects. C-STORE SCP specific numbers can be specified by prefix "<AE
+ Title>:". If absent, only one Association will be used.' EQUALITY caseExact
+ IA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {305}( 1.2.40.0.13.1.15.110.3.313 NAME 'dcmMergeAttribute
+ ' DESC 'Merge DICOM Attribute in format {attributeID}={value}. {attributeID
+ } inside of {value} will be replaced by the value of that attribute in the 
+ original dataset.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.1
+ 21.1.26 )
+olcAttributeTypes: {306}( 1.2.40.0.13.1.15.110.3.314 NAME 'dcmStorageThresho
+ ldExceedsPermanently' DESC 'Indicates to removed the Storage System from th
+ e list of configured Storage Systems of the Network AE requesting that Stor
+ age System when the Storage Threshold exceeds; true if absent.' EQUALITY bo
+ oleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {307}( 1.2.40.0.13.1.15.110.3.315 NAME 'dcmStorageThresho
+ ldExceeded' DESC 'Date and time in format YYYYMMDDHHMMSS.FFFFFF when the St
+ orage Threshold exceeded.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.14
+ 66.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {308}( 1.2.40.0.13.1.15.110.3.316 NAME 'dcmUPSPriority' D
+ ESC 'Value of Scheduled Procedure Step Priority (0074,1200) in created UPS.
+  Enumerated Values: HIGH, MEDIUM, LOW. If absent, MEDIUM will be applied.' 
+ EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALU
+ E )
+olcAttributeTypes: {309}( 1.2.40.0.13.1.15.110.3.317 NAME 'dcmUPSInputReadin
+ essState' DESC 'Value of Input Readiness State (0040,4041) in created UPS. 
+ Enumerated Values: INCOMPLETE, UNAVAILABLE, READY. If absent, READY will be
+  applied.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 
+ SINGLE-VALUE )
+olcAttributeTypes: {310}( 1.2.40.0.13.1.15.110.3.318 NAME 'dcmUPSLabel' DESC
+  'Value of Procedure Step Label (0074,1204) in created UPS. {attributeID} w
+ ill be replaced by the value of that attribute in the received dataset.' EQ
+ UALITY caseExactMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {311}( 1.2.40.0.13.1.15.110.3.319 NAME 'dcmUPSInstanceUID
+ BasedOnName' DESC 'Value used to generate name based SOP Instance UID (0008
+ ,0018) in created UPS. Typically, the value will include {StudyInstanceUID}
+ , {SeriesInstanceUID} or {SOPInstanceUID} to create a different UPS for eac
+ h received Study, Series or Object. If absent, a random generated SOP Insta
+ nce UID (0008,0018) will be used.' EQUALITY caseExactMatch SYNTAX 1.3.6.1.4
+ .1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {312}( 1.2.40.0.13.1.15.110.3.320 NAME 'dcmUPSIncludeStud
+ yInstanceUID' DESC 'Indicates if the Study Instance UID (0020,000D) of the 
+ received object and the specified Accession Number (0008,0050), Requested P
+ rocedure ID (0040,1001) and Requesting Service (0032,1033) shall be include
+ d in the item of the Referenced Request Sequence (0040,A370) in the created
+  UPS. If false or absent, an empty Referenced Request Sequence (0040,A370) 
+ is included.' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SIN
+ GLE-VALUE )
+olcAttributeTypes: {313}( 1.2.40.0.13.1.15.110.3.321 NAME 'dcmUPSIncludeRefe
+ rencedRequest' DESC 'Indicates if Study Instance UID (0020,000D) of the rec
+ eived object shall be included in the created UPS; false if absent.' EQUALI
+ TY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {314}( 1.2.40.0.13.1.15.110.3.322 NAME 'dcmUPSIncludeInpu
+ tInformation' DESC 'Indicates if received objects shall be referenced in th
+ e Input Information Sequence (0040,4021) in created UPS. Enumerated Values:
+  NO, SINGLE (= do not updating existing UPS), APPEND (= update existing UPS
+  in state SCHEDULED), SINGLE_OR_CREATE (= if UPS already exists, create new
+  UPS with derived UID), APPEND_OR_CREATE (= if existing UPS is no longer in
+  state SCHEDULED, create new UPS with derived UID). If absent, APPEND_OR_CR
+ EATE will be applied.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.1
+ 15.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {315}( 1.2.40.0.13.1.15.110.3.323 NAME 'dcmUPSScheduledWo
+ rkitemCode' DESC 'Item of Scheduled Workitem Code Sequence (0040,4018) in c
+ reated UPS in format (CV, CSD, "CM").' EQUALITY caseExactMatch SUBSTR caseE
+ xactSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {316}( 1.2.40.0.13.1.15.110.3.324 NAME 'dcmUPSScheduledSt
+ ationNameCode' DESC 'Item of Scheduled Station Name Code Sequence (0040,402
+ 5) in created UPS in format (CV, CSD, "CM").' EQUALITY caseExactMatch SUBST
+ R caseExactSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {317}( 1.2.40.0.13.1.15.110.3.325 NAME 'dcmUPSScheduledSt
+ ationClassCode' DESC 'Item of Scheduled Station Class Code Sequence (0040,4
+ 026) in created UPS in format (CV, CSD, "CM").' EQUALITY caseExactMatch SUB
+ STR caseExactSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {318}( 1.2.40.0.13.1.15.110.3.326 NAME 'dcmUPSScheduledSt
+ ationLocationCode' DESC 'Item of Scheduled Station Geographic Location Code
+  Sequence (0040,4027) in created UPS in format (CV, CSD, "CM").' EQUALITY c
+ aseExactMatch SUBSTR caseExactSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.1
+ 21.1.15 )
+olcAttributeTypes: {319}( 1.2.40.0.13.1.15.110.3.327 NAME 'dcmUPSScheduledHu
+ manPerformerCode' DESC 'Item of Human Performer Code Sequence (0040,4009) i
+ n Item of Scheduled Human Performers Sequence (0040,4034) in created UPS in
+  format (CV, CSD, "CM").' EQUALITY caseExactMatch SUBSTR caseExactSubstring
+ sMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {320}( 1.2.40.0.13.1.15.110.3.328 NAME 'dcmUPSScheduledHu
+ manPerformerName' DESC 'Value of Human Performer Name (0040,4037) in Item o
+ f Scheduled Human Performers Sequence (0040,4034) in created UPS. {attribut
+ eID} will be replaced by the value of that attribute in the received datase
+ t.' EQUALITY caseExactMatch SUBSTR caseExactSubstringsMatch SYNTAX 1.3.6.1.
+ 4.1.1466.115.121.1.15 )
+olcAttributeTypes: {321}( 1.2.40.0.13.1.15.110.3.329 NAME 'dcmUPSScheduledHu
+ manPerformerOrganization' DESC 'Value of Human Performer Organization (0040
+ ,4036) in Item of Scheduled Human Performers Sequence (0040,4034) in create
+ d UPS. {attributeID} will be replaced by the value of that attribute in the
+  received dataset.' EQUALITY caseExactMatch SUBSTR caseExactSubstringsMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {322}( 1.2.40.0.13.1.15.110.3.330 NAME 'dcmUPSStartDateTi
+ meDelay' DESC 'Delay of Scheduled Procedure Step Start DateTime (0040,4005)
+  in created UPS from receive time in format PnDTnHnMn.nS. No delay if absen
+ t.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-
+ VALUE )
+olcAttributeTypes: {323}( 1.2.40.0.13.1.15.110.3.331 NAME 'dcmUPSCompletionD
+ ateTimeDelay' DESC 'Delay of Expected Completion DateTime (0040,4011) in cr
+ eated UPS from receive time in format PnDTnHnMn.nS. If absent, no Expected 
+ Completion Date and Time will be set.' EQUALITY caseExactIA5Match SYNTAX 1.
+ 3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {324}( 1.2.40.0.13.1.15.110.3.332 NAME 'dcmAdmissionID' D
+ ESC 'Value of Admission ID (0038,0010) in created UPS. {attributeID} will b
+ e replaced by the value of that attribute in the received dataset.' EQUALIT
+ Y caseExactMatch SUBSTR caseExactSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.11
+ 5.121.1.15 )
+olcAttributeTypes: {325}( 1.2.40.0.13.1.15.110.3.333 NAME 'dcmAccessionNumbe
+ r' DESC 'Value of Accession Number (0008,0050) in Item of Referenced Reques
+ t Sequence (0040,A370) in created UPS. {attributeID} will be replaced by th
+ e value of that attribute in the received dataset.' EQUALITY caseExactMatch
+  SUBSTR caseExactSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {326}( 1.2.40.0.13.1.15.110.3.334 NAME 'dcmRequestedProce
+ dureID' DESC 'Value of Requested Procedure ID (0040,1001) in Item of Refere
+ nced Request Sequence (0040,A370) in created UPS. {attributeID} will be rep
+ laced by the value of that attribute in the received dataset.' EQUALITY cas
+ eExactMatch SUBSTR caseExactSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121
+ .1.15 )
+olcAttributeTypes: {327}( 1.2.40.0.13.1.15.110.3.335 NAME 'dcmRequestedProce
+ dureDescription' DESC 'Value of Requested Procedure Description (0032,1060)
+  in Item of Referenced Request Sequence (0040,A370) in created UPS. {attrib
+ uteID} will be replaced by the value of that attribute in the received data
+ set.' EQUALITY caseExactMatch SUBSTR caseExactSubstringsMatch SYNTAX 1.3.6.
+ 1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {328}( 1.2.40.0.13.1.15.110.3.336 NAME 'dcmRequestingPhys
+ ician' DESC 'Value of Requesting Physician (0032,1032) in Item of Reference
+ d Request Sequence (0040,A370) in created UPS. {attributeID} will be replac
+ ed by the value of that attribute in the received dataset.' EQUALITY caseEx
+ actMatch SUBSTR caseExactSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.
+ 15 )
+olcAttributeTypes: {329}( 1.2.40.0.13.1.15.110.3.337 NAME 'dcmRequestingServ
+ ice' DESC 'Value of Requesting Service (0032,1033) in Item of Referenced Re
+ quest Sequence (0040,A370) in created UPS. {attributeID} will be replaced b
+ y the value of that attribute in the received dataset.' EQUALITY caseExactM
+ atch SUBSTR caseExactSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {330}( 1.2.40.0.13.1.15.110.3.338 NAME 'dcmRestrictRetrie
+ veSilently' DESC 'Indicates if the set of requested objects to retrieve sha
+ ll be silently (=without counting not transferred object as failures) restr
+ icted according the Transfer Capabilities of the Retrieve Destination. Othe
+ rwise the number of requested objects for which no Transfer Capability is c
+ onfigured for the Retrieve Destination and therefore are not retrieved is c
+ ounted as failures. Only effective, if the Retrieve Destination has configu
+ red at least one Transfer Capability with SCP role; false if absent.' EQUAL
+ ITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {331}( 1.2.40.0.13.1.15.110.3.339 NAME 'dcmRetryInProcess
+ OnStartup' DESC 'Indicates to retry tasks left in status IN PROCESS on syst
+ em start-up; false if absent.' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.146
+ 6.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {332}( 1.2.40.0.13.1.15.110.3.340 NAME 'dcmRetrieveTaskPo
+ llingInterval' DESC 'Retrieve Task Polling Interval in ISO-8601 duration fo
+ rmat PnDTnHnMnS.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.12
+ 1.1.26 SINGLE-VALUE )
+olcAttributeTypes: {333}( 1.2.40.0.13.1.15.110.3.341 NAME 'dcmRetrieveTaskFe
+ tchSize' DESC 'Limit result set of DB query for Retrieve Tasks ready for pr
+ ocessing; 100 if absent' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.
+ 121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {334}( 1.2.40.0.13.1.15.110.3.342 NAME 'hl7PSUForRequeste
+ dProcedure' DESC 'Restrict notification of configured HL7 Procedure Status 
+ Update Receiving Applications about Procedure Status Update to existence of
+  Scheduled Procedure Steps of a Requested Procedure (MWL Items in the DB) w
+ ith matching Study Instance UID; false if absent.' EQUALITY booleanMatch SY
+ NTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {335}( 1.2.40.0.13.1.15.110.3.343 NAME 'hl7PSUPIDPV1' DES
+ C 'Indicates to include a Patient Identification (PID) and a Patient Visit 
+ (PV1) segment in the HL7 Procedure Status Update message. Implicitly set, i
+ f hl7PSUMessageType = ORU_R01. false if absent.' EQUALITY booleanMatch SYNT
+ AX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {336}( 1.2.40.0.13.1.15.110.3.344 NAME 'hl7PSURequestedPr
+ ocedureID' DESC 'Value for Requested Procedure ID in notification message, 
+ if there are no Scheduled Procedure Steps of a Requested Procedure (MWL Ite
+ ms in the DB) with matching Study Instance UID. {<attributeID>} will be rep
+ laced by the value of attribute in the received study. If absent {StudyInst
+ anceUID,hash} will be used.' EQUALITY caseExactMatch SUBSTR caseExactSubstr
+ ingsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {337}( 1.2.40.0.13.1.15.110.3.345 NAME 'hl7PSUAccessionNu
+ mber' DESC 'Value for Accession Number in notification message, if there ar
+ e no Scheduled Procedure Steps of a Requested Procedure (MWL Items in the D
+ B) with matching Study Instance UID. {<attributeID>} will be replaced by th
+ e value of attribute in the received study. If absent {StudyInstanceUID,has
+ h} will be used.' EQUALITY caseExactMatch SUBSTR caseExactSubstringsMatch S
+ YNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {338}( 1.2.40.0.13.1.15.110.3.346 NAME 'hl7PSUFillerOrder
+ Number' DESC 'Value for Filler Order Number in notification message, if the
+ re are no Scheduled Procedure Steps of a Requested Procedure (MWL Items in 
+ the DB) with matching Study Instance UID. {<attributeID>} will be replaced 
+ by the value of attribute in the received study. If absent {StudyInstanceUI
+ D,hash} will be used.' EQUALITY caseExactMatch SUBSTR caseExactSubstringsMa
+ tch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {339}( 1.2.40.0.13.1.15.110.3.347 NAME 'hl7PSUPlacerOrder
+ Number' DESC 'Value for Placer Order Number in notification message, if the
+ re are no Scheduled Procedure Steps of a Requested Procedure (MWL Items in 
+ the DB) with matching Study Instance UID. {<attributeID>} will be replaced 
+ by the value of attribute in the received study. If absent {StudyInstanceUI
+ D,hash} will be used.' EQUALITY caseExactMatch SUBSTR caseExactSubstringsMa
+ tch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {340}( 1.2.40.0.13.1.15.110.3.348 NAME 'dcmStowQuicktime2
+ MP4' DESC 'Indicates if QuickTime containers received in STOW-RS Metadata a
+ nd Bulkdata requests shall be converted to MP4 containers encapsulated in c
+ reated DICOM instances; false if absent.' EQUALITY booleanMatch SYNTAX 1.3.
+ 6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {341}( 1.2.40.0.13.1.15.110.3.349 NAME 'hl7PSUCondition' 
+ DESC 'Restrict notification of configured HL7 Procedure Status Update Recei
+ ving Applications about Procedure Status Update by conditions on attributes
+  of received composite object in format {attributeID}[!]={regEx}.' EQUALITY
+  caseExactMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {342}( 1.2.40.0.13.1.15.110.3.350 NAME 'hl7PSUMessageType
+ ' DESC 'Message Type of HL7 Procedure Status Update message. Enumerated val
+ ues: OMG_O19, ORU_R01. OMG_O19 if absent.' EQUALITY caseExactIA5Match SYNTA
+ X 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {343}( 1.2.40.0.13.1.15.110.3.351 NAME 'hl7ORUAction' DES
+ C 'Specifies action on receive of HL7 ORU^R01 message: IMPORT_REPORT (= tra
+ nscode received HL7 ORU^R01 to DICOM SR), MWL_COMPLETED (= set Status of ma
+ tching MWL items to COMPLETED).' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.
+ 4.1.1466.115.121.1.26 )
+olcAttributeTypes: {344}( 1.2.40.0.13.1.15.110.3.352 NAME 'dcmMWLPollingInte
+ rval' DESC 'Polling Interval for deleting MWL items in ISO-8601 duration fo
+ rmat PnDTnHnMnS. If absent, MWL Items will not get deleted.' EQUALITY caseE
+ xactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {345}( 1.2.40.0.13.1.15.110.3.353 NAME 'dcmMWLFetchSize' 
+ DESC 'Maximal number of MWL items to update or delete in one transaction; 1
+ 00 if absent.' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 S
+ INGLE-VALUE )
+olcAttributeTypes: {346}( 1.2.40.0.13.1.15.110.3.354 NAME 'dcmDeleteMWLDelay
+ ' DESC 'Delay in ISO-8601 duration format PnDTnHnMn.nS for deleting MWL ite
+ ms. Status specific delays can be specified by prefix SCHEDULED:, ARRIVED:,
+  READY:, STARTED:, DEPARTED:, CANCELLED:, DISCONTINUED:, COMPLETED:. If abs
+ ent, MWL Items will not get deleted.' EQUALITY caseExactIA5Match SYNTAX 1.3
+ .6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {347}( 1.2.40.0.13.1.15.110.3.355 NAME 'dcmRecordAttribut
+ eModification' DESC 'Indicates if modifications of attributes of stored obj
+ ects are recorded in Items of the Original Attributes Sequence; true if abs
+ ent.' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALU
+ E )
+olcAttributeTypes: {348}( 1.2.40.0.13.1.15.110.3.356 NAME 'dcmMWLStatusOnIdl
+ e' DESC 'Change Status of idle Scheduled Procedure Steps to specified value
+ . Enumerated value: CANCELLED, DISCONTINUED, COMPLETED.' EQUALITY caseExact
+ IA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {349}( 1.2.40.0.13.1.15.110.3.357 NAME 'dcmUPSProcessingP
+ ollingInterval' DESC 'Polling Interval for Workitems ready for processing i
+ n ISO-8601 duration format PnDTnHnMnS. If absent, Workitems will not get pr
+ ocessed.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 S
+ INGLE-VALUE )
+olcAttributeTypes: {350}( 1.2.40.0.13.1.15.110.3.358 NAME 'dcmUPSProcessingF
+ etchSize' DESC 'Limit result set of DB query for Workitems ready for proces
+ sing; 100 if absent' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.
+ 1.27 SINGLE-VALUE )
+olcAttributeTypes: {351}( 1.2.40.0.13.1.15.110.3.359 NAME 'dcmMaxThreads' DE
+ SC 'Maximal number of threads used for processing of Workitems matching thi
+ s rule. 1 if absent.' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121
+ .1.27 SINGLE-VALUE )
+olcAttributeTypes: {352}( 1.2.40.0.13.1.15.110.3.360 NAME 'dcmFallbackWadoUR
+ IWebAppName' DESC 'Name of external Web Application to redirect WADO URI re
+ quests if the requested Object is not available by this archive.' EQUALITY 
+ caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {353}( 1.2.40.0.13.1.15.110.3.361 NAME 'dcmFallbackWadoUR
+ IHttpStatusCode' DESC 'HTTP Status code of Redirect Response configured by 
+ dcmFallbackWadoURIWebAppName. 303 (See Other) if absent.' EQUALITY integerM
+ atch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {354}( 1.2.40.0.13.1.15.110.3.362 NAME 'hl7ReferredMerged
+ PatientPolicy' DESC 'Specifies policy on incoming HL7 messages referring an
+  already merged Patient. Enumerated values: REJECT, IGNORE, IGNORE_DUPLICAT
+ E_MERGE. If absent, REJECT will be applied.' EQUALITY caseExactIA5Match SYN
+ TAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {355}( 1.2.40.0.13.1.15.110.3.363 NAME 'dcmRetrieveTaskWa
+ rningOnNoMatch' DESC 'Indicates if the result status of Retrieve Tasks shal
+ l be set to WARNING if none of the requested objects was found on the C-MOV
+ E SCP; false if absent.' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.
+ 121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {356}( 1.2.40.0.13.1.15.110.3.364 NAME 'dcmRetrieveTaskWa
+ rningOnWarnings' DESC 'Indicates if the result status of Retrieve Tasks sha
+ ll be set to WARNING if there are Warning Sub-Operations, even if the retri
+ eve of all objects was successful; false if absent.' EQUALITY booleanMatch 
+ SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {357}( 1.2.40.0.13.1.15.110.3.365 NAME 'dcmCStoreSCUOfCMo
+ veSCP' DESC 'Indicates to identify received C-STORE RQs as caused by a forw
+ arded C-MOVE RQs by the Calling AET in the A-Associate-RQ in format <Callin
+ g AET>=<C-MOVE-SCP>. Typically <Calling AET> and <C-MOVE-SCP> are equal. If
+  no value is configured for a particular C-MOVE SCP, attribute (0000,1030) 
+ Move Originator Application Entity Title in the C-STORE RQ is used to find 
+ the corresponding forwarded C-MOVE RQ to forward the received C-STORE RQ to
+  the original Move Destination.' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.
+ 4.1.1466.115.121.1.26 )
+olcAttributeTypes: {358}( 1.2.40.0.13.1.15.110.3.366 NAME 'dcmDeleteStudyChu
+ nkSize' DESC 'Number of Instances deleted in one DB transaction on permanen
+ t deletion of Studies; 100 if absent.' EQUALITY integerMatch SYNTAX 1.3.6.1
+ .4.1.1466.115.121.1.27 SINGLE-VALUE )
+olcObjectClasses: {0}( 1.2.40.0.13.1.15.110.4.4 NAME 'dcmArchiveDevice' DESC
+  'DICOM Archive Device related information' SUP top AUXILIARY MUST (   dcmF
+ uzzyAlgorithmClass ) MAY (   dcmRecordAttributeModification $   dcmBulkData
+ DescriptorID $   dcmQueryRetrieveViewID $   dcmRetrieveAET $   dcmReturnRet
+ rieveAET $   dcmMultipleStoreAssociations $   dcmDefaultCharacterSet $   dc
+ mUPSWorklistLabel $   dcmUPSEventSCU $   dcmUPSEventSCUKeepAlive $   dcmSto
+ rageID $   dcmMetadataStorageID $   dcmSeriesMetadataStorageID $   dcmSerie
+ sMetadataDelay $   dcmSeriesMetadataPollingInterval $   dcmSeriesMetadataFe
+ tchSize $   dcmSeriesMetadataThreads $   dcmSeriesMetadataRetryInterval $  
+  dcmSeriesMetadataMaxRetries $   dcmPurgeInstanceRecords $   dcmPurgeInstan
+ ceRecordsDelay $   dcmPurgeInstanceRecordsPollingInterval $   dcmPurgeInsta
+ nceRecordsFetchSize $   dcmMWLPollingInterval $   dcmMWLFetchSize $   dcmDe
+ leteMWLDelay $   dcmDeleteUPSPollingInterval $   dcmDeleteUPSFetchSize $   
+ dcmDeleteUPSCompletedDelay $   dcmDeleteUPSCanceledDelay $   dcmOverwritePo
+ licy $   dcmAcceptMissingPatientID $   dcmAcceptConflictingPatientID $   dc
+ mRejectConflictingPatientAttribute $   hl7TrackChangedPatientID $   dcmBulk
+ DataSpoolDirectory $   dcmQueryMatchUnknown $   dcmHideSPSWithStatusFromMWL
+  $   dcmValidateCallingAEHostname $   dcmPersonNameComponentOrderInsensitiv
+ eMatching $   dcmSendPendingCGet $   dcmSendPendingCMoveInterval $   dcmWad
+ oSupportedSRClasses $   dcmWadoSupportedPRClasses $   dcmWadoSR2HtmlTemplat
+ eURI $   dcmWadoSR2TextTemplateURI $   dcmWadoCDA2HtmlTemplateURI $   dcmWa
+ doThumbnailViewport $   dcmWadoZIPEntryNameFormat $   dcmQueryFetchSize $  
+  dcmQueryMaxNumberOfResults $   dcmQidoMaxNumberOfResults $   dcmFwdMppsDes
+ tination $   dcmIanDestination $   dcmIanDelay $   dcmIanTimeout $   dcmIan
+ OnTimeout $   dcmIanTaskPollingInterval $   dcmIanTaskFetchSize $   dcmSpan
+ ningCFindSCP $   dcmSpanningCFindSCPPolicy $   dcmSpanningCFindSCPRetrieveA
+ ET $   dcmFallbackCMoveSCP $   dcmFallbackCMoveSCPDestination $   dcmFallba
+ ckCMoveSCPCallingAET $   dcmFallbackCMoveSCPLeadingCFindSCP $   dcmFallback
+ CMoveSCPLevel $   dcmFallbackCMoveSCPRetries $   dcmFallbackCMoveSCPStudyOl
+ derThan $   dcmFallbackWadoURIWebAppName $   dcmFallbackWadoURIHttpStatusCo
+ de $   dcmExternalRetrieveAEDestination $   dcmXDSiImagingDocumentSourceAET
+ itle $   dcmAltCMoveSCP $   dcmCStoreSCUOfCMoveSCP $   dcmDiffStudiesInclud
+ efieldAll $   dcmUPSProcessingPollingInterval $   dcmUPSProcessingFetchSize
+  $   dcmExportTaskPollingInterval $   dcmExportTaskFetchSize $   dcmRetriev
+ eTaskPollingInterval $   dcmRetrieveTaskFetchSize $   dcmPurgeStoragePollin
+ gInterval $   dcmPurgeStorageFetchSize $   dcmFailedToDeletePollingInterval
+  $   dcmFailedToDeleteFetchSize $   dcmDeleteStudyBatchSize $   dcmDeleteSt
+ udyChunkSize $   dcmDeletePatientOnDeleteLastStudy $   dcmDeleteRejectedPol
+ lingInterval $   dcmDeleteRejectedFetchSize $   dcmMaxAccessTimeStaleness $
+    dcmAECacheStaleTimeout $   dcmLeadingCFindSCPQueryCacheStaleTimeout $   
+ dcmLeadingCFindSCPQueryCacheSize $   dcmAuditSpoolDirectory $   dcmAuditPol
+ lingInterval $   dcmAuditAggregateDuration $   dcmAuditUnknownStudyInstance
+ UID $   dcmAuditUnknownPatientID $   dcmShowPatientInfoInSystemLog $   dcmS
+ howPatientInfoInAuditLog $   dcmStowSpoolDirectory $   dcmWadoSpoolDirector
+ y $   hl7ORUAction $   hl7PatientUpdateTemplateURI $   hl7ImportReportTempl
+ ateURI $   hl7ImportReportTemplateParam $   hl7ScheduleProcedureTemplateURI
+  $   hl7OutgoingPatientUpdateTemplateURI $   hl7ScheduledProtocolCodeInOrde
+ r $   hl7ScheduledStationAETInOrder $   hl7LogFilePattern $   hl7ErrorLogFi
+ lePattern $   hl7NoPatientCreateMessageType $   dcmUnzipVendorDataToURI $  
+  dcmPurgeQueueMessagePollingInterval $   dcmPurgeQueueMessageFetchSize $   
+ dcmPurgeStgCmtCompletedDelay $   dcmPurgeStgCmtPollingInterval $   dcmRejec
+ tExpiredStudiesPollingInterval $   dcmRejectExpiredStudiesPollingStartTime 
+ $   dcmRejectExpiredStudiesSchedule $   dcmRejectExpiredStudiesFetchSize $ 
+   dcmRejectExpiredSeriesFetchSize $   dcmRejectExpiredStudiesAETitle $   dc
+ mStorePermissionServiceURL $   dcmStorePermissionServiceResponse $   dcmSto
+ rePermissionServiceResponsePattern $   dcmStorePermissionServiceExpirationD
+ atePattern $   dcmStorePermissionServiceErrorCommentPattern $   dcmStorePer
+ missionServiceErrorCodePattern $   dcmStorePermissionCacheStaleTimeout $   
+ dcmStorePermissionCacheSize $   dcmStorePermissionServiceResponse $   dcmMe
+ rgeMWLCacheStaleTimeout $   dcmMergeMWLCacheSize $   dcmStoreUpdateDBMaxRet
+ ries $   dcmStoreUpdateDBMinRetryDelay $   dcmStoreUpdateDBMaxRetryDelay $ 
+   dcmAllowRejectionForDataRetentionPolicyExpired $   dcmAllowDeleteStudyPer
+ manently $   dcmAllowDeletePatient $   dcmRemapRetrieveURL $   dcmAuditReco
+ rdRepositoryURL $   dcmElasticSearchURL $   dcmAudit2JsonFhirTemplateURI $ 
+   dcmAudit2XmlFhirTemplateURI $   dcmInvokeImageDisplayPatientURL $   dcmIn
+ vokeImageDisplayStudyURL $   dcmCopyMoveUpdatePolicy $   dcmLinkMWLEntryUpd
+ atePolicy $   dcmStgCmtPolicy $   dcmStgCmtUpdateLocationStatus $   dcmStgC
+ mtStorageID $   dcmUpdateLocationStatusOnRetrieve $   dcmStorageVerificatio
+ nOnRetrieve $   dcmStorageVerificationPolicy $   dcmStorageVerificationUpda
+ teLocationStatus $   dcmStorageVerificationStorageID $   dcmStorageVerifica
+ tionAETitle $   dcmStorageVerificationBatchID $   dcmStorageVerificationIni
+ tialDelay $   dcmStorageVerificationPeriod $   dcmStorageVerificationMaxSch
+ eduled $   dcmStorageVerificationPollingInterval $   dcmStorageVerification
+ Schedule $   dcmStorageVerificationFetchSize $   dcmCompressionPollingInter
+ val $   dcmCompressionFetchSize $   dcmCompressionSchedule $   dcmCompressi
+ onThreads $   dcmCompressionAETitle $   dcmDiffTaskProgressUpdateInterval $
+    dcmPatientVerificationPDQServiceID $   dcmPatientVerificationPollingInte
+ rval $   dcmPatientVerificationFetchSize $   dcmPatientVerificationPeriod $
+    dcmPatientVerificationPeriodOnNotFound $   dcmPatientVerificationRetryIn
+ terval $   dcmPatientVerificationMaxRetries $   dcmPatientVerificationMaxSt
+ aleness $   dcmPatientVerificationAdjustIssuerOfPatientID $   dcmAuditSoftw
+ areConfigurationVerbose $   dcmQueueTasksFetchSize $   dcmRejectionNoteStor
+ ageAET $   dcmXRoadProperty $   dcmImpaxReportProperty $   dcmUIConfigurati
+ onDeviceName $   dcmCSVUploadChunkSize $   dcmValidateUID $   dcmRelational
+ QueryNegotiationLenient $   dcmRelationalRetrieveNegotiationLenient $   dcm
+ RestrictRetrieveAccordingTransferCapabilities $   dcmRestrictRetrieveSilent
+ ly $   dcmStowRetiredTransferSyntax $   dcmStowExcludeAPPMarkers $   dcmRet
+ rieveTaskWarningOnNoMatch $   dcmRetrieveTaskWarningOnWarnings $   dcmStowQ
+ uicktime2MP4 $   dcmSchedulerMinStartDelay $   hl7ADTReceivingApplication $
+    hl7ADTSendingApplication $   hl7PSUReceivingApplication $   hl7PSUSendin
+ gApplication $   hl7PSUDelay $   hl7PSUCondition $   hl7PSUForRequestedProc
+ edure $   hl7PSURequestedProcedureID $   hl7PSUAccessionNumber $   hl7PSUFi
+ llerOrderNumber $   hl7PSUPlacerOrderNumber $   hl7PSUMessageType $   hl7PS
+ UPIDPV1 $   hl7PSUMWL $   hl7PSUTimeout $   hl7PSUOnTimeout $   hl7PSUTaskP
+ ollingInterval $   hl7PSUTaskFetchSize $   hl7UseNullValue $   hl7OrderMiss
+ ingStudyIUIDPolicy $   hl7ImportReportMissingStudyIUIDPolicy $   hl7Referre
+ dMergedPatientPolicy $   hl7DicomCharacterSet $   hl7VeterinaryUsePatientNa
+ me ))
+olcObjectClasses: {1}( 1.2.40.0.13.1.15.110.4.5 NAME 'dcmArchiveNetworkAE' D
+ ESC 'DICOM Archive Network AE related information' SUP top AUXILIARY MAY ( 
+   dcmRecordAttributeModification $   dcmBulkDataDescriptorID $   dcmRetriev
+ eAET $   dcmReturnRetrieveAET $   dcmMultipleStoreAssociations $   dcmDefau
+ ltCharacterSet $   dcmUPSWorklistLabel $   dcmUPSEventSCU $   dcmUPSEventSC
+ UKeepAlive $   dcmStorageID $   dcmObjectStorageID $   dcmObjectStorageCoun
+ t $   dcmMetadataStorageID $   dcmSeriesMetadataDelay $   dcmPurgeInstanceR
+ ecordsDelay $   dcmStoreAccessControlID $   dcmAccessControlID $   dcmAccep
+ tedMoveDestination $   dcmOverwritePolicy $   dcmAcceptMissingPatientID $  
+  dcmAcceptConflictingPatientID $   dcmRejectConflictingPatientAttribute $  
+  dcmQueryRetrieveViewID $   dcmBulkDataSpoolDirectory $   dcmQueryMatchUnkn
+ own $   dcmHideSPSWithStatusFromMWL $   dcmValidateCallingAEHostname $   dc
+ mPersonNameComponentOrderInsensitiveMatching $   dcmSendPendingCGet $   dcm
+ SendPendingCMoveInterval $   dcmWadoSR2HtmlTemplateURI $   dcmWadoSR2TextTe
+ mplateURI $   dcmWadoCDA2HtmlTemplateURI $   dcmWadoThumbnailViewport $   d
+ cmWadoZIPEntryNameFormat $   dcmQueryMaxNumberOfResults $   dcmQidoMaxNumbe
+ rOfResults $   dcmFwdMppsDestination $   dcmIanDestination $   dcmIanDelay 
+ $   dcmIanTimeout $   dcmIanOnTimeout $   dcmSpanningCFindSCP $   dcmSpanni
+ ngCFindSCPPolicy $   dcmSpanningCFindSCPRetrieveAET $   dcmFallbackCMoveSCP
+  $   dcmFallbackCMoveSCPDestination $   dcmFallbackCMoveSCPCallingAET $   d
+ cmFallbackCMoveSCPLeadingCFindSCP $   dcmFallbackCMoveSCPLevel $   dcmFallb
+ ackCMoveSCPRetries $   dcmFallbackCMoveSCPStudyOlderThan $   dcmFallbackWad
+ oURIWebAppName $   dcmFallbackWadoURIHttpStatusCode $   dcmExternalRetrieve
+ AEDestination $   dcmAltCMoveSCP $   dcmDiffStudiesIncludefieldAll $   dcmS
+ torePermissionServiceURL $   dcmStorePermissionServiceResponse $   dcmStore
+ PermissionServiceResponsePattern $   dcmStorePermissionServiceExpirationDat
+ ePattern $   dcmStorePermissionServiceErrorCommentPattern $   dcmStorePermi
+ ssionServiceErrorCodePattern $   dcmStorePermissionServiceResponse $   dcmA
+ llowRejectionForDataRetentionPolicyExpired $   dcmAcceptedUserRole $   dcmA
+ llowDeleteStudyPermanently $   dcmAllowDeletePatient $   dcmInvokeImageDisp
+ layPatientURL $   dcmInvokeImageDisplayStudyURL $   dcmCopyMoveUpdatePolicy
+  $   dcmLinkMWLEntryUpdatePolicy $   dcmUpdateLocationStatusOnRetrieve $   
+ dcmStorageVerificationOnRetrieve $   dcmStgCmtPolicy $   dcmStgCmtUpdateLoc
+ ationStatus $   dcmStgCmtStorageID $   dcmStorageVerificationPolicy $   dcm
+ StorageVerificationUpdateLocationStatus $   dcmStorageVerificationStorageID
+  $   dcmStorageVerificationInitialDelay $   dcmRelationalQueryNegotiationLe
+ nient $   dcmRelationalRetrieveNegotiationLenient $   dcmRestrictRetrieveAc
+ cordingTransferCapabilities $   dcmRestrictRetrieveSilently $   dcmStowReti
+ redTransferSyntax $   dcmStowExcludeAPPMarkers $   dcmRetrieveTaskWarningOn
+ NoMatch $   dcmRetrieveTaskWarningOnWarnings $   dcmStowQuicktime2MP4 $   h
+ l7PSUDelay $   hl7PSUCondition $   hl7PSUForRequestedProcedure $   hl7PSURe
+ questedProcedureID $   hl7PSUAccessionNumber $   hl7PSUFillerOrderNumber $ 
+   hl7PSUPlacerOrderNumber $   hl7PSUMessageType $   hl7PSUPIDPV1 $   hl7PSU
+ MWL $   hl7PSUTimeout $   hl7PSUOnTimeout $   hl7PSUReceivingApplication $ 
+   hl7PSUSendingApplication ))
+olcObjectClasses: {2}( 1.2.40.0.13.1.15.110.4.10 NAME 'dcmAttributeFilter' D
+ ESC 'Attributes stored in the database' SUP top STRUCTURAL MUST (   dcmEnti
+ ty $   dcmTag ) MAY (   dcmCustomAttribute1 $   dcmCustomAttribute2 $   dcm
+ CustomAttribute3 $   dcmAttributeUpdatePolicy ) )
+olcObjectClasses: {3}( 1.2.40.0.13.1.15.110.4.11 NAME 'dcmArchiveHL7Applicat
+ ion' DESC 'DICOM Archive HL7 Application related information' SUP top AUXIL
+ IARY MAY (   dcmRecordAttributeModification $   hl7ORUAction $   hl7Patient
+ UpdateTemplateURI $   hl7ImportReportTemplateURI $   hl7ImportReportTemplat
+ eParam $   hl7ScheduleProcedureTemplateURI $   hl7ScheduledProtocolCodeInOr
+ der $   hl7ScheduledStationAETInOrder $   hl7LogFilePattern $   hl7ErrorLog
+ FilePattern $   hl7NoPatientCreateMessageType $   hl7UseNullValue $   hl7Or
+ derMissingStudyIUIDPolicy $   hl7ImportReportMissingStudyIUIDPolicy $   hl7
+ ReferredMergedPatientPolicy $   hl7DicomCharacterSet $   hl7VeterinaryUsePa
+ tientName $   dicomAETitle ) )
+olcObjectClasses: {4}( 1.2.40.0.13.1.15.110.4.12 NAME 'dcmStorage' DESC 'Sto
+ rage Descriptor' SUP top STRUCTURAL MUST (   dcmStorageID $   dcmURI ) MAY 
+ (   dcmDigestAlgorithm $   dcmMaxRetries $   dcmRetryDelay $   dcmRetrieveA
+ ET $   dcmInstanceAvailability $   dcmStorageClusterID $   dcmStorageThresh
+ old $   dcmStorageThresholdExceeded $   dcmStorageThresholdExceedsPermanent
+ ly $   dcmDeleterThreshold $   dcmDeleteStudiesOlderThan $   dcmDeleteStudi
+ esReceivedBefore $   dcmDeleteStudiesNotUsedSince $   dcmDeleterThreads $  
+  dcmExternalRetrieveAET $   dcmExportStorageID $   dcmRetrieveCacheStorageI
+ D $   dcmRetrieveCacheMaxParallel $   dcmNoDeletionConstraint $   dcmStorag
+ eDuration $   dcmReadOnly $   dcmProperty ) )
+olcObjectClasses: {5}( 1.2.40.0.13.1.15.110.4.13 NAME 'dcmQueryRetrieveView'
+  DESC 'Specifies behavior on Rejection Note Stored' SUP top STRUCTURAL MUST
+  (   dcmQueryRetrieveViewID ) MAY (   dcmShowInstancesRejectedByCode $   dc
+ mHideRejectionNoteWithCode $   dcmHideNotRejectedInstances ) )
+olcObjectClasses: {6}( 1.2.40.0.13.1.15.110.4.14 NAME 'dcmQueue' DESC 'Manag
+ ed JMS Queue' SUP top STRUCTURAL MUST (   dcmQueueName $   dcmJndiName) MAY
+  (   dicomDescription $   dcmMaxRetries $   dcmRetryDelay $   dcmMaxRetryDe
+ lay $   dcmRetryDelayMultiplier $   dcmRetryOnWarning $   dcmRetryInProcess
+ OnStartup $   dcmPurgeQueueMessageCompletedDelay $   dcmPurgeQueueMessageFa
+ iledDelay $   dcmPurgeQueueMessageWarningDelay $   dcmPurgeQueueMessageCanc
+ eledDelay $   dcmMaxQueueSize ) )
+olcObjectClasses: {7}( 1.2.40.0.13.1.15.110.4.15 NAME 'dcmExporter' DESC 'Ex
+ porter Descriptor' SUP top STRUCTURAL MUST (   dcmExporterID $   dcmURI $  
+  dcmQueueName ) MAY (   dcmExportPriority $   dicomDescription $   dicomAET
+ itle $   dcmDeleteStudyFromStorageID $   dcmRejectForDataRetentionExpiry $ 
+   dcmStgCmtSCP $   dcmIanDestination $   dcmRetrieveAET $   dcmRetrieveLoca
+ tionUID $   dcmInstanceAvailability $   dcmSchedule $   dcmProperty ) )
+olcObjectClasses: {8}( 1.2.40.0.13.1.15.110.4.16 NAME 'dcmExportRule' DESC '
+ Export Rule' SUP top STRUCTURAL MUST (   cn $   dcmEntity $   dcmExporterID
+  ) MAY (   dcmExportReoccurredInstances $   dcmExportPreviousEntity $   dcm
+ Property $   dcmSchedule $   dcmDuration ) )
+olcObjectClasses: {9}( 1.2.40.0.13.1.15.110.4.17 NAME 'dcmArchiveCompression
+ Rule' DESC 'Archive Compression rule' SUP top STRUCTURAL MUST (   cn $   di
+ comTransferSyntax ) MAY (   dcmRulePriority $   dcmCompressionDelay $   dcm
+ Property $   dcmImageWriteParam ) )
+olcObjectClasses: {10}( 1.2.40.0.13.1.15.110.4.18 NAME 'dcmArchiveAttributeC
+ oercion' DESC 'Archive Attribute Coercion of received/sent DIMSE' SUP top S
+ TRUCTURAL MUST (   cn $   dcmDIMSE $   dicomTransferRole ) MAY (   dcmRuleP
+ riority $   dcmAETitle $   dcmHostname $   dcmSOPClass $   dcmProperty $   
+ dcmRetrieveAsReceived $   dcmDeIdentification $   dcmURI $   dcmNoKeywords 
+ $   dcmMergeMWLMatchingKey $   dcmMergeMWLTemplateURI $   dcmLeadingCFindSC
+ P $   dcmTag $   dcmAttributeUpdatePolicy $   dcmTrimISO2022CharacterSet $ 
+   dcmUseCallingAETitleAs $   dcmMergeAttribute $   dcmNullifyTag $   dcmNul
+ lifyIssuerOfPatientID $   dcmIssuerOfPatientID $   dcmIssuerOfPatientIDForm
+ at $   dcmSupplementFromDeviceReference ) )
+olcObjectClasses: {11}( 1.2.40.0.13.1.15.110.4.19 NAME 'dcmRejectionNote' DE
+ SC 'Specifies behavior on Rejection Note Stored' SUP top STRUCTURAL MUST ( 
+   dcmRejectionNoteLabel $   dcmRejectionNoteCode ) MAY (   dcmRejectionNote
+ Type $   dcmRevokeRejection $   dcmAcceptPreviousRejectedInstance $   dcmOv
+ erwritePreviousRejection $   dcmAcceptRejectionBeforeStorage $   dcmDeleteR
+ ejectedInstanceDelay $   dcmDeleteRejectionNoteDelay ) )
+olcObjectClasses: {12}( 1.2.40.0.13.1.15.110.4.20 NAME 'dcmStudyRetentionPol
+ icy' DESC 'Study Retention Policy' SUP top STRUCTURAL MUST (   cn $   dcmRe
+ tentionPeriod ) MAY (   dcmRulePriority $   dcmProperty $   dcmStartRetenti
+ onPeriodOnStudyDate $   dcmFreezeExpirationDate $   dcmRevokeExpiration $  
+  dcmExpireSeriesIndividually $   dcmExporterID ) )
+olcObjectClasses: {13}( 1.2.40.0.13.1.15.110.4.21 NAME 'dcmIDGenerator' DESC
+  'ID Generator' SUP top STRUCTURAL MUST (   dcmIDGeneratorName $   dcmIDGen
+ eratorFormat ) MAY (   dcmIDGeneratorInitialValue ) )
+olcObjectClasses: {14}( 1.2.40.0.13.1.15.110.4.22 NAME 'hl7ForwardRule' DESC
+  'HL7 Forward Rule' SUP top STRUCTURAL MUST (   cn $   hl7FwdApplicationNam
+ e ) MAY (   dcmProperty ) )
+olcObjectClasses: {15}( 1.2.40.0.13.1.15.110.4.23 NAME 'dcmStoreAccessContro
+ lIDRule' DESC 'Store Access Control ID Rule' SUP top STRUCTURAL MUST (   cn
+  $   dcmStoreAccessControlID ) MAY (   dcmRulePriority $   dcmProperty ) )
+olcObjectClasses: {16}( 1.2.40.0.13.1.15.110.4.25 NAME 'dcmRSForwardRule' DE
+ SC 'RESTful Forward Rule' SUP top STRUCTURAL MUST (   cn $   dcmWebAppName 
+ ) MAY (   dcmURI $   dcmKeycloakServerID $   dcmTLSAllowAnyHostname $   dcm
+ TLSDisableTrustManager $   dcmURIPattern $   dcmRSOperation ) )
+olcObjectClasses: {17}( 1.2.40.0.13.1.15.110.4.26 NAME 'dcmMetadataFilter' D
+ ESC 'NO LONGER USED - MAY BE DECLARED OBSOLETE IN FUTURE VERSION' SUP top S
+ TRUCTURAL MUST (   dcmMetadataFilterName $   dcmTag ) )
+olcObjectClasses: {18}( 1.2.40.0.13.1.15.110.4.27 NAME 'hl7OrderScheduledSta
+ tion' DESC 'Scheduled Station selected on MWL HL7 Order Feed' SUP top STRUC
+ TURAL MUST (   cn $   hl7OrderScheduledStationDeviceReference ) MAY (   dcm
+ RulePriority $   dcmProperty ) )
+olcObjectClasses: {19}( 1.2.40.0.13.1.15.110.4.28 NAME 'hl7OrderSPSStatus' D
+ ESC 'Specifies SPS Status of DICOM MWL items created/updated on received HL
+ 7 ORM^O01, OMI^O23, OMG^O19 messages.' SUP top STRUCTURAL MUST (   dcmSPSSt
+ atus $   hl7OrderControlStatus ) )
+olcObjectClasses: {20}( 1.2.40.0.13.1.15.110.4.29 NAME 'dcmAttributeSet' DES
+ C 'Named Attribute Set for Query Parameter "includefields" of QIDO-RS and W
+ ADO-RS Metadata or by Query Parameter "comparefield" of DIFF-RS requests.' 
+ SUP top STRUCTURAL MUST (   dcmAttributeSetType $   dcmAttributeSetID $   d
+ cmTag ) MAY (   dcmAttributeSetNumber $   dcmAttributeSetTitle $   dicomDes
+ cription $   dcmProperty $   dicomInstalled ) )
+olcObjectClasses: {21}( 1.2.40.0.13.1.15.110.4.30 NAME 'dcmKeycloakServer' D
+ ESC 'Specifies Keycloak Server for token request' SUP top STRUCTURAL MUST (
+    dcmKeycloakServerID $   dcmURI $   dcmKeycloakRealm $   dcmKeycloakClien
+ tID ) MAY (   dcmKeycloakGrantType $   dcmKeycloakClientSecret $   dcmTLSAl
+ lowAnyHostname $   dcmTLSDisableTrustManager $   uid $   userPassword ) )
+olcObjectClasses: {22}( 1.2.40.0.13.1.15.110.4.31 NAME 'dcmExportPriorsRule'
+  DESC 'Export Priors Rule' SUP top STRUCTURAL MUST (   cn $   dcmExporterID
+  ) MAY (   dcmExportReoccurredInstances $   dcmEntitySelector $   dcmProper
+ ty $   dcmSchedule $   dcmDuration ) )
+olcObjectClasses: {23}( 1.2.40.0.13.1.15.110.4.32 NAME 'hl7ExportRule' DESC 
+ 'HL7 Export Rule' SUP top STRUCTURAL MUST (   cn $   dcmExporterID ) MAY ( 
+   dcmEntitySelector $   dcmProperty $   dcmNullifyIssuerOfPatientID $   dcm
+ IssuerOfPatientID $   dcmDuration ) )
+olcObjectClasses: {24}( 1.2.40.0.13.1.15.110.4.33 NAME 'hl7StudyRetentionPol
+ icy' DESC 'Study Retention Policy' SUP top STRUCTURAL MUST (   cn $   dicom
+ AETitle ) MAY (   dcmRetentionPeriod $   dcmMaxRetentionPeriod $   dcmRuleP
+ riority $   dcmProperty $   dcmStartRetentionPeriodOnStudyDate $   dcmFreez
+ eExpirationDate $   dcmRevokeExpiration $   dcmExporterID ) )
+olcObjectClasses: {25}( 1.2.40.0.13.1.15.110.4.34 NAME 'dcmPDQService' DESC 
+ 'PDQ Service Descriptor' SUP top STRUCTURAL MUST (   dcmPDQServiceID $   dc
+ mURI ) MAY (   dicomDescription $   dcmTag $   dcmEntity $   dcmDefaultChar
+ acterSet $   dcmProperty ) )
+olcObjectClasses: {26}( 1.2.40.0.13.1.15.110.4.35 NAME 'hl7PrefetchRule' DES
+ C 'HL7 Prefetch Rule' SUP top STRUCTURAL MUST (   cn $   dcmQueueName $   d
+ icomAETitle $   dcmPrefetchCFindSCP $   dcmPrefetchCMoveSCP $   dcmPrefetch
+ CStoreSCP ) MAY (   dcmEntitySelector $   dcmProperty $   dcmSchedule $   d
+ cmNullifyIssuerOfPatientID $   dcmIssuerOfPatientID $   dcmDuration ) )
+olcObjectClasses: {27}( 1.2.40.0.13.1.15.110.4.36 NAME 'dcmMetrics' DESC 'Me
+ trics' SUP top STRUCTURAL MUST (   dcmMetricsName ) MAY (   dicomDescriptio
+ n $   dcmMetricsRetentionPeriod $   dcmUnit  ))
+olcObjectClasses: {28}( 1.2.40.0.13.1.15.110.4.37 NAME 'dcmUPSOnStore' DESC 
+ 'UPS on Store' SUP top STRUCTURAL MUST (   cn $   dcmUPSLabel ) MAY (   dcm
+ UPSPriority $   dcmUPSInputReadinessState $   dcmUPSStartDateTimeDelay $   
+ dcmUPSCompletionDateTimeDelay $   dcmUPSWorklistLabel $   dcmUPSInstanceUID
+ BasedOnName $   dcmUPSIncludeInputInformation $   dcmUPSIncludeStudyInstanc
+ eUID $   dcmUPSIncludeReferencedRequest $   dcmUPSScheduledWorkitemCode $  
+  dcmUPSScheduledStationNameCode $   dcmUPSScheduledStationClassCode $   dcm
+ UPSScheduledStationLocationCode $   dcmUPSScheduledHumanPerformerCode $   d
+ cmUPSScheduledHumanPerformerName $   dcmUPSScheduledHumanPerformerOrganizat
+ ion $   dcmAdmissionID $   dicomIssuerOfAdmissionID $   dcmAccessionNumber 
+ $   dicomIssuerOfAccessionNumber $   dcmRequestedProcedureID $   dcmRequest
+ edProcedureDescription $   dcmRequestingPhysician $   dcmRequestingService 
+ $   dcmURI $   dcmNoKeywords $   dcmProperty $   dcmSchedule ) )
+olcObjectClasses: {29}( 1.2.40.0.13.1.15.110.4.38 NAME 'hl7UPSOnHL7' DESC 'U
+ PS on Store' SUP top STRUCTURAL MUST (   cn $   dcmURI $   dcmUPSLabel ) MA
+ Y (   dcmUPSPriority $   dcmUPSInputReadinessState $   dcmUPSStartDateTimeD
+ elay $   dcmUPSCompletionDateTimeDelay $   dcmUPSWorklistLabel $   dcmUPSIn
+ stanceUIDBasedOnName $   dcmUPSScheduledWorkitemCode $   dcmUPSScheduledSta
+ tionNameCode $   dcmUPSScheduledStationClassCode $   dcmUPSScheduledStation
+ LocationCode $   dcmUPSScheduledHumanPerformerCode $   dcmUPSScheduledHuman
+ PerformerName $   dcmUPSScheduledHumanPerformerOrganization $   dcmRequesti
+ ngService $   dcmProperty $   dcmSchedule ) )
+olcObjectClasses: {30}( 1.2.40.0.13.1.15.110.4.39 NAME 'dcmMWLIdleTimeout' D
+ ESC 'MWL Idle Timeout' SUP top STRUCTURAL MUST (   cn $   dicomAETitle $   
+ dcmMWLStatusOnIdle $   dcmDuration ) MAY (   dcmAETitle ) )
+olcObjectClasses: {31}( 1.2.40.0.13.1.15.110.4.40 NAME 'dcmUPSProcessingRule
+ ' DESC 'UPS Processing Rule' SUP top STRUCTURAL MUST (   cn $   dcmURI $   
+ dicomAETitle ) MAY (   dcmUPSPriority $   dcmUPSInputReadinessState $   dcm
+ UPSLabel $   dcmUPSWorklistLabel $   dcmUPSScheduledWorkitemCode $   dcmUPS
+ ScheduledStationNameCode $   dcmUPSScheduledStationClassCode $   dcmUPSSche
+ duledStationLocationCode $   dcmMaxThreads $   dcmMaxRetries $   dcmRetryDe
+ lay $   dcmMaxRetryDelay $   dcmRetryDelayMultiplier $   dcmRetryOnWarning 
+ $   dcmProperty $   dcmSchedule ) )
+structuralObjectClass: olcSchemaConfig
+entryUUID: 060966c7-ab60-4c54-b717-b12fb9429c05
+creatorsName: cn=admin,cn=config
+createTimestamp: 20200515100342Z
+entryCSN: 20200515100342.531911Z#000000#000#000000
+modifiersName: cn=admin,cn=config
+modifyTimestamp: 20200515100342Z
